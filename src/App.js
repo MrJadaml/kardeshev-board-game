@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { ExoCard } from './cards/ExoCard'
+import { cards } from './data/cards';
+import { deal, discard } from './utils/cards';
 
-function App() {
+const App = () => {
+  const handleDraw = () => {
+    console.log(deal(cards))
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <button onClick={handleDraw}>
+        Draw
+      </button>
+    {cards.map(card =>
+      <ExoCard data={card} />
+    )}
     </div>
   );
 }
+
 
 export default App;

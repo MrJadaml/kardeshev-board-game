@@ -1,0 +1,56 @@
+.exoCard {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  height: 350px;
+  background: gray;
+}
+
+.startSplit {
+}
+
+.endSplit {
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  opacity: 0.7;
+  color: white;
+  position: absolute;
+  width: 100%;
+  paddting-top: 5px;
+}
+
+.cost {
+}
+
+.name {
+}
+
+.image {
+  height: 150px;
+  background: black;
+}
+
+.discoveries {
+  opacity: 0.7;
+  color: white;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding-bottom: 5px;
+}
+
+.description {
+}
+
+.flavorTex {
+}
+
+.cardType {
+  border: 1px solid black;
+}
+
