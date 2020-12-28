@@ -7,7 +7,7 @@ import CardRiver from '../card-river/';
 
 import { draw } from '../utils/cards';
 
-const PlayerArea = ({ }) => {
+const PlayerArea = ({ explorationDraw }) => {
   const [playerDeck, setPlayerDeck] = useState(starterCards);
   const [playerHand, setPlayerHand] = useState([]);
   const [playerDiscardPile, setPlayerDiscardPile] = useState([]);
@@ -33,6 +33,8 @@ const PlayerArea = ({ }) => {
   }
 
   const handleEndTurn = () => {
+    // Discard exploration cards
+
     // if deck is empty
       // shuffle discard pile to create new deck
   }
@@ -44,7 +46,7 @@ const PlayerArea = ({ }) => {
 
       <CardRiver
         name="Exploration"
-        cards={[]}
+        cards={explorationDraw}
       />
       ------------------------
 

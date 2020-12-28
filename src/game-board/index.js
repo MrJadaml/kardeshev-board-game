@@ -1,8 +1,10 @@
+import { useState } from 'react';
+
 import Tracker from '../tracker/';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 
-const GameBoard = ({ handleDraw, shuffle }) => {
+const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
   return (
     <div className="game-board">
       <h1>Game Board</h1>
@@ -13,12 +15,12 @@ const GameBoard = ({ handleDraw, shuffle }) => {
         <Deck
           name="Exploration"
           handleDraw={handleDraw}
-          cards={[]}
+          cards={explorationDeck}
         />
 
         <DiscardPile
           name="Exploration"
-          cards={[]}
+          cards={explorationDiscardPile}
         />
       </div>
     </div>
