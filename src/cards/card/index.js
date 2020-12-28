@@ -1,16 +1,17 @@
 import styles from './Card.module.css';
 
-const Card = ({ data, handleDiscard }) => {
+const Card = ({ data, handleDiscard, handlePlay }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <h4>{data.name}</h4>
         <div>{data.description}</div>
+        ---
         <div>{data.flavorText}</div>
       </div>
       <div>
-        <button onClick={() => {}}>Play</button>
-        <button onClick={handleDiscard}>Discard</button>
+        {handlePlay && <button onClick={handlePlay}>Play</button>}
+        {handleDiscard && <button onClick={handleDiscard}>Discard</button>}
       </div>
     </div>
   );

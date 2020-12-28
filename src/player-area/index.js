@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './PlayerArea.module.css';
 
 import { starterCards } from '../content/faction/starters';
 import Deck from '../deck/';
@@ -44,17 +45,25 @@ const PlayerArea = ({ explorationDraw }) => {
       <h1>Player Area</h1>
       <button onCLick={handleEndTurn}>End Turn</button>
 
+      <div>Active Cards - Exos, EAs, PCs, etc..</div>
+      <br />
+
+      ------------------------
+
       <CardRiver
         name="Exploration"
         cards={explorationDraw}
       />
+
       ------------------------
 
-      <div>Active Cards - Exos, EAs, PCs, etc..</div>
-      <br />
-      ------------------------
+      <CardRiver
+        name="Player"
+        cards={playerHand}
+        handleDiscard={handlePlayerDiscard}
+      />
 
-      <div>
+      <div className={styles.cardStacks}>
         <Deck
           name="Player"
           handleDraw={handlePlayerDraw}
@@ -66,12 +75,6 @@ const PlayerArea = ({ explorationDraw }) => {
           cards={playerDiscardPile}
         />
       </div>
-
-      <CardRiver
-        name="Player"
-        cards={playerHand}
-        handleDiscard={handlePlayerDiscard}
-      />
     </div>
   );
 }

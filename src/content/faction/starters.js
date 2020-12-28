@@ -50,4 +50,3 @@ export const starterCards = [
   credit,
   faction,
 ];
-

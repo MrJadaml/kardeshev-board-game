@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './GameBoard.module.css';
 
 import Tracker from '../tracker/';
 import Deck from '../deck/';
@@ -11,7 +12,7 @@ const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
 
       <Tracker name="Session" />
 
-      <div>
+      <div className={styles.cardStacks}>
         <Deck
           name="Exploration"
           handleDraw={handleDraw}

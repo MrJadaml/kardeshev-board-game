@@ -5,7 +5,7 @@ import Card from '../cards/card/';
 const CardRiver = ({ cards, name, handleDiscard }) => {
   return (
     <div className={styles.cardRiver}>
-      <div>{name} Card River</div>
+      <h4>{name} Card River</h4>
 
       <div className={styles.cards}>
         {cards.map(card =>

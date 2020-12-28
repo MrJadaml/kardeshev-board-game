@@ -1,6 +1,8 @@
+import styles from './Deck.module.css';
+
 const Deck = ({ cards, name, handleDraw }) => {
   return (
-    <div className="deck">
+    <div className={styles.deck}>
       <div> {cards.length} cards left</div>
       <div> [ deck ] </div>
       <div>{name} Deck</div>
