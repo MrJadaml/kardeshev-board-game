@@ -8,7 +8,7 @@ export const shuffle = (deck) => {
   return deck
 }
 
-export const deal = (deck, count = 5) => {
+export const draw = (deck, count = 5) => {
   return deck.splice(0, count);
 }
 
@@ -22,12 +22,12 @@ function main() {
 
   const shuffledDeck = shuffle(deck);
 
-  let hand = deal(shuffledDeck)
+  let hand = draw(shuffledDeck)
   console.log(hand);
   console.log(discardPile)
   discardPile = discard(hand, discardPile);
   console.log(discardPile)
-  hand = deal(shuffledDeck)
+  hand = draw(shuffledDeck)
   console.log(hand);
   console.log(discardPile)
   discardPile = discard(hand, discardPile);
