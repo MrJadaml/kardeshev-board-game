@@ -10,6 +10,7 @@ const CardRiver = ({ cards, name, handleDiscard }) => {
       <div className={styles.cards}>
         {cards.map(card =>
           <Card
+            key={card.id}
             data={card}
             handleDiscard={() => {handleDiscard(card.id)}}
           />
