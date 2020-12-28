@@ -59,8 +59,6 @@ const App = () => {
       {discardPile.map(card =>
         <ExoCard data={card} />
       )}
-
-      <p>{discardPile.length} cards in discard</p>
     </div>
   );
 }

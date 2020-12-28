@@ -1,14 +1,20 @@
+import styles from './CardRiver.module.css';
+
 import Card from '../cards/card/';
 
-const CardRiver = ({ cards, name }) => {
+const CardRiver = ({ cards, name, handleDiscard }) => {
   return (
-    <div className="card-river">
+    <div className={styles.cardRiver}>
       <div>{name} Card River</div>
 
-      {cards.map(card =>
-        <Card data={card} />
-      )}
-      <h4>[] [] [] [] []</h4>
+      <div className={styles.cards}>
+        {cards.map(card =>
+          <Card
+            data={card}
+            handleDiscard={() => {handleDiscard(card.id)}}
+          />
+        )}
+      </div>
 
       <br />
     </div>

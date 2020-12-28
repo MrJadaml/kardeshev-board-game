@@ -1,0 +1,9 @@
+.wrapper {
+  width: 15%;
+  padding-bottom: 8px;
+}
+
+.card {
+  border: 1px solid black;
+  padding: 8px;
+}

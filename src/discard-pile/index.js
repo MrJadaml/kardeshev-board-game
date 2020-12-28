@@ -1,7 +1,7 @@
 const DiscardPile = ({ cards, name }) => {
   return (
     <div className="discard-pile">
-      <div> X cards left</div>
+      <div> {cards.length} cards</div>
       <div> [ pile ] </div>
       <div>{name} Discard Pile</div>
 
