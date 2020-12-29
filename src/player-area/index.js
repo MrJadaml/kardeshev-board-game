@@ -1,15 +1,15 @@
 import { useState } from 'react';
 import styles from './PlayerArea.module.css';
 
-import { starterCards } from '../content/faction/starters';
+import { starterCards } from '../content/cards/faction/starters';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import CardRiver from '../card-river/';
 
-import { draw } from '../utils/cards';
+import { draw, shuffle } from '../utils/cards';
 
 const PlayerArea = ({ explorationDraw }) => {
-  const [playerDeck, setPlayerDeck] = useState(starterCards);
+  const [playerDeck, setPlayerDeck] = useState(shuffle(starterCards));
   const [playerHand, setPlayerHand] = useState([]);
   const [playerDiscardPile, setPlayerDiscardPile] = useState([]);
 
@@ -36,14 +36,18 @@ const PlayerArea = ({ explorationDraw }) => {
   const handleEndTurn = () => {
     // Discard exploration cards
 
-    // if deck is empty
-      // shuffle discard pile to create new deck
+    if (playerDeck.length === 0) {
+      setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
+      setPlayerHand([]);
+      setPlayerDeck(shuffle(playerDiscardPile));
+      setPlayerDiscardPile([]);
+    }
   }
 
   return (
     <div className="player-area">
       <h1>Player Area</h1>
-      <button onCLick={handleEndTurn}>End Turn</button>
+      <button onClick={handleEndTurn}>End Turn</button>
 
       <div>Active Cards - Exos, EAs, PCs, etc..</div>
       <br />

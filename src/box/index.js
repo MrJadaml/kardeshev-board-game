@@ -1,8 +1,3 @@
-import { useState } from 'react';
-
-import { cards } from '../data/cards';
-import { draw } from '../utils/cards';
-
 const Box = () => {
   return (
     <div className="game-board">
@@ -12,6 +7,5 @@ const Box = () => {
     </div>
   );
 }
-
 
 export default Box;

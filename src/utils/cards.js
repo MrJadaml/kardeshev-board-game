@@ -7,6 +7,6 @@ export const shuffle = (deck) => {
   return deck
 }
 
-export const draw = (deck, count = 3) => {
+export const draw = (deck, count = 1) => {
   return deck.splice(0, count);
 }

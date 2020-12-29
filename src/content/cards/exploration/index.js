@@ -1,20 +1,17 @@
+import { exoPlanets } from '../exo/';
+import { wormholes } from './wormholes';
+import { emptySpaceCards } from './empty-space';
+import { starterSpaceJunk } from './space-debris';
+
 // TEMP DATA FOR DRAW LOGIC
 // REPLACE!!
 
 // Exploration Base deck
-// - Exoplanet Cards + Faction Home Planets
+// - Exo Cards + Faction Home Planets
 // - Event Cards
 // - Encounter Cards
 
 // CARDS
-const emptySpace = {
-  id: 3001,
-  name: 'Empty Space',
-  imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: 'Nothing but darkness',
-  flavorText: 'blah blah blah',
-  cardType: 'Null',
-}
 
 const discoveries = [
   '@',
@@ -57,7 +54,7 @@ const sun = {
 }
 
 // SETS
-const exoplanetCards = [
+const exoCards= [
   planet,
   comet,
   sun,
@@ -102,16 +99,14 @@ const encounterCards = [
 ];
 
 const baseExplorationCards = [
-  emptySpace,
-  emptySpace,
-  emptySpace,
-  emptySpace,
-  emptySpace,
+  ...starterSpaceJunk,
+  ...emptySpaceCards,
+  ...wormholes,
 ];
 
 // STARTING DECK
 export const starterCards = [
-  ...exoplanetCards,
+  ...exoCards,
   ...eventCards,
   ...encounterCards,
   ...baseExplorationCards,

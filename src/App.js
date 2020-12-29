@@ -4,12 +4,11 @@ import { useState } from 'react';
 import GameBoard  from './game-board/'
 import PlayerArea  from './player-area/'
 import Box  from './box/'
-import { cards } from './data/cards';
-import { draw } from './utils/cards';
-import { starterCards } from './content/exploration/';
+import { draw, shuffle } from './utils/cards';
+import { starterCards } from './content/cards/exploration/';
 
 const App = () => {
-  const [explorationDeck, setExplorationDeck] = useState(starterCards);
+  const [explorationDeck, setExplorationDeck] = useState(shuffle(starterCards));
   const [explorationDraw, setExplorationDraw] = useState([]);
   const [explorationDiscardPile, setExplorationDiscardPile] = useState([]);
 

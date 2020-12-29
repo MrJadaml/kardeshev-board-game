@@ -8,7 +8,7 @@ const Deck = ({ cards, name, handleDraw }) => {
       <div>{name} Deck</div>
 
       <div>
-        <button onClick={handleDraw}>Draw 3</button>
+        <button onClick={handleDraw}>Draw</button>
         <button onClick={() => {}}>Peek</button>
       </div>
 
