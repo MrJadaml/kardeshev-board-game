@@ -2,6 +2,7 @@ import { exoPlanets } from '../exo/';
 import { wormholes } from './wormholes';
 import { emptySpaceCards } from './empty-space';
 import { starterSpaceJunk } from './space-debris';
+import { idGenerator } from '../index';
 
 // TEMP DATA FOR DRAW LOGIC
 // REPLACE!!
@@ -25,7 +26,7 @@ const discoveries = [
 
 const planet = {
   name: 'Planet X',
-  id: 8001,
+  cardId: 8001,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   discoveries: discoveries,
   description: 'Bonus Ore',
@@ -35,7 +36,7 @@ const planet = {
 
 const comet = {
   name: 'Haley Bob',
-  id: 8002,
+  cardId: 8002,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   discoveries: discoveries,
   description: 'Water!',
@@ -45,7 +46,7 @@ const comet = {
 
 const sun = {
   name: 'Proxima B',
-  id: 8003,
+  cardId: 8003,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   discoveries: discoveries,
   description: 'sun',
@@ -62,7 +63,7 @@ const exoCards= [
 
 const eventCards = [
   {
-    id: 4001,
+    cardId: 4001,
     name: 'Boom',
     imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
     description: 'things are getting hot..',
@@ -73,7 +74,7 @@ const eventCards = [
 
 const encounterCards = [
   {
-    id: 2001,
+    cardId: 2001,
     name: 'Politicians',
     imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
     description: 'Corrupt AF',
@@ -81,7 +82,7 @@ const encounterCards = [
     cardType: 'Encounter',
   },
   {
-    id: 2002,
+    cardId: 2002,
     name: 'Space Pirates',
     imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
     description: 'Arrrrrrr',
@@ -89,7 +90,7 @@ const encounterCards = [
     cardType: 'Encounter',
   },
   {
-    id: 2003,
+    cardId: 2003,
     name: 'War Mongers',
     imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
     description: 'We are coming for you',
@@ -105,10 +106,10 @@ const baseExplorationCards = [
 ];
 
 // STARTING DECK
-export const starterCards = [
+export const starterCards = idGenerator([
   ...exoCards,
   ...eventCards,
   ...encounterCards,
   ...baseExplorationCards,
-];
+]);
 

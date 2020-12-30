@@ -1,6 +1,6 @@
 const wormhole1a = {
   name: 'Wormhole 1A',
-  id: 7000,
+  cardId: 7000,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: 'A bend in space time to 1b',
   flavorText: '',
@@ -9,7 +9,7 @@ const wormhole1a = {
 
 const wormhole1b = {
   name: 'Wormhole 1B',
-  id: 7001,
+  cardId: 7001,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: 'A bend in space time to 1a',
   flavorText: '',
@@ -18,7 +18,7 @@ const wormhole1b = {
 
 const wormhole2a = {
   name: 'Wormhole 2A',
-  id: 7002,
+  cardId: 7002,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: 'A bend in space time to 2b',
   flavorText: '',
@@ -27,7 +27,7 @@ const wormhole2a = {
 
 const wormhole2b = {
   name: 'Wormhole 2B',
-  id: 7003,
+  cardId: 7003,
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: 'A bend in space time to 2a',
   flavorText: '',

@@ -32,6 +32,10 @@ const App = () => {
 
       <PlayerArea
         explorationDraw={explorationDraw}
+        setExplorationDraw={setExplorationDraw}
+        explorationDiscardPile={explorationDiscardPile}
+        setExplorationDiscardPile={setExplorationDiscardPile}
+        setExplorationDeck={setExplorationDeck}
       />
 
       <Box />

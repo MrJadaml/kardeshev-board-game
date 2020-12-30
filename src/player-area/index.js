@@ -8,7 +8,13 @@ import CardRiver from '../card-river/';
 
 import { draw, shuffle } from '../utils/cards';
 
-const PlayerArea = ({ explorationDraw }) => {
+const PlayerArea = ({
+  explorationDraw,
+  setExplorationDraw,
+  explorationDiscardPile,
+  setExplorationDiscardPile,
+  setExplorationDeck,
+}) => {
   const [playerDeck, setPlayerDeck] = useState(shuffle(starterCards));
   const [playerHand, setPlayerHand] = useState([]);
   const [playerDiscardPile, setPlayerDiscardPile] = useState([]);
@@ -34,11 +40,13 @@ const PlayerArea = ({ explorationDraw }) => {
   }
 
   const handleEndTurn = () => {
-    // Discard exploration cards
+    setExplorationDiscardPile([...explorationDraw, ...explorationDiscardPile]);
+    setExplorationDraw([]);
+
+    setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
+    setPlayerHand([]);
 
     if (playerDeck.length === 0) {
-      setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
-      setPlayerHand([]);
       setPlayerDeck(shuffle(playerDiscardPile));
       setPlayerDiscardPile([]);
     }
