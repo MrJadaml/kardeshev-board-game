@@ -5,6 +5,7 @@ import { starterCards } from '../content/cards/faction/starters';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import CardRiver from '../card-river/';
+import FactionBoard from '../faction-board/';
 
 import { draw, shuffle } from '../utils/cards';
 
@@ -87,6 +88,7 @@ const PlayerArea = ({
         handleDiscard={handlePlayerDiscard}
       />
 
+      <FactionBoard />
     </div>
   );
 }
