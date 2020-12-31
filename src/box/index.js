@@ -1,6 +1,8 @@
+import styles from './Box.module.css';
+
 const Box = () => {
   return (
-    <div className="game-board">
+    <div className={styles.box}>
       <h1>Box</h1>
 
       <div>...</div>

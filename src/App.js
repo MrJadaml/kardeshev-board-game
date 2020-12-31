@@ -13,13 +13,12 @@ const App = () => {
   const [explorationDiscardPile, setExplorationDiscardPile] = useState([]);
 
   const handleExplorationDraw = () => {
-    setExplorationDraw([...draw(explorationDeck), ...explorationDraw]);
+    setExplorationDraw([...explorationDraw, ...draw(explorationDeck)]);
   }
 
   const handleExplorationDiscard = () => {
-  }
-
-  const handleDraw = () => {
+    setExplorationDiscardPile([...explorationDraw, ...explorationDiscardPile]);
+    setExplorationDraw([]);
   }
 
   return (
@@ -32,13 +31,12 @@ const App = () => {
 
       <PlayerArea
         explorationDraw={explorationDraw}
-        setExplorationDraw={setExplorationDraw}
-        explorationDiscardPile={explorationDiscardPile}
+        handleExplorationDiscard={handleExplorationDiscard}
         setExplorationDiscardPile={setExplorationDiscardPile}
         setExplorationDeck={setExplorationDeck}
       />
 
-      <Box />
+      {/* <Box /> */}
     </div>
   );
 }

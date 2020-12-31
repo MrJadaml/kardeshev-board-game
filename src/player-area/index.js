@@ -10,8 +10,7 @@ import { draw, shuffle } from '../utils/cards';
 
 const PlayerArea = ({
   explorationDraw,
-  setExplorationDraw,
-  explorationDiscardPile,
+  handleExplorationDiscard,
   setExplorationDiscardPile,
   setExplorationDeck,
 }) => {
@@ -20,7 +19,7 @@ const PlayerArea = ({
   const [playerDiscardPile, setPlayerDiscardPile] = useState([]);
 
   const handlePlayerDraw = () => {
-    setPlayerHand([...draw(playerDeck), ...playerHand]);
+    setPlayerHand([...playerHand, ...draw(playerDeck)]);
   }
 
   const handlePlayerDiscard = (cardID) => {
@@ -40,9 +39,9 @@ const PlayerArea = ({
   }
 
   const handleEndTurn = () => {
-    setExplorationDiscardPile([...explorationDraw, ...explorationDiscardPile]);
-    setExplorationDraw([]);
+    handleExplorationDiscard()
 
+    setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
     setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
     setPlayerHand([]);
 
@@ -69,12 +68,6 @@ const PlayerArea = ({
 
       ------------------------
 
-      <CardRiver
-        name="Player"
-        cards={playerHand}
-        handleDiscard={handlePlayerDiscard}
-      />
-
       <div className={styles.cardStacks}>
         <Deck
           name="Player"
@@ -87,6 +80,13 @@ const PlayerArea = ({
           cards={playerDiscardPile}
         />
       </div>
+
+      <CardRiver
+        name="Player"
+        cards={playerHand}
+        handleDiscard={handlePlayerDiscard}
+      />
+
     </div>
   );
 }
