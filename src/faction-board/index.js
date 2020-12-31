@@ -84,29 +84,6 @@ const FactionBoard = () => {
             <div className={styles.hex}></div>
         </li>
 
-        <li className={styles.row4}>
-            <div className={styles.hex}></div>
-        </li>
-        <li className={styles.row4}>
-            <div className={styles.hex}></div>
-        </li>
-        <li className={styles.row4}>
-            <div className={styles.hex}></div>
-        </li>
-        <li className={styles.row4}>
-            <div className={styles.hex}></div>
-        </li>
-
-        <li className={styles.row3, styles.push1}>
-            <div className={styles.hex}></div>
-        </li>
-        <li className={styles.row3}>
-            <div className={styles.hex}></div>
-        </li>
-        <li className={styles.row3}>
-            <div className={styles.hex}></div>
-        </li>
-
         <li className={styles.row2, styles.push2}>
             <div className={styles.hex}></div>
         </li>

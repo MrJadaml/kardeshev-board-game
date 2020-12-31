@@ -6,6 +6,7 @@ import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import CardRiver from '../card-river/';
 import FactionBoard from '../faction-board/';
+import HexMap from '../hex-map/';
 
 import { draw, shuffle } from '../utils/cards';
 
@@ -88,7 +89,7 @@ const PlayerArea = ({
         handleDiscard={handlePlayerDiscard}
       />
 
-      <FactionBoard />
+      <HexMap />
     </div>
   );
 }
