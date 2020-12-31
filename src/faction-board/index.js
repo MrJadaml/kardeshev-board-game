@@ -1,10 +1,12 @@
 import styles from './FactionBoard.module.css';
 import HexMap from '../hex-map/';
 import Workers from '../workers/';
+import Buildings from '../buildings/';
+import Satellite from '../satellite/';
 
 const FactionBoard = () => {
   return (
-    <div className={styles.Board}>
+    <div className={styles.board}>
       <div className={styles.header}>
         <div className={styles.bio}>
           Faction Name
@@ -12,10 +14,22 @@ const FactionBoard = () => {
         <div className={styles.workers}>
           <Workers />
         </div>
-        <div className={styles.survey}>
+      </div>
+
+      <div className={styles.body}>
+        <div className={styles.side}>
+          <div className={styles.abilities}>
+            Faction Abilities...
+          </div>
+          <div className={styles.buildings}>
+            <Buildings />
+          </div>
+        </div>
+        <HexMap />
+        <div className={styles.satellite}>
+          <Satellite />
         </div>
       </div>
-      <HexMap />
     </div>
   );
 }

@@ -4,7 +4,7 @@ import {
   HexEngine,
 } from "react-hex-engine";
 
-const HexMap = () => (
+const Workers = () => (
   <HexEngine
     width={280}
     height={60}
@@ -27,5 +27,5 @@ const HexMap = () => (
   </HexEngine>
 );
 
-export default HexMap;
+export default Workers;
 

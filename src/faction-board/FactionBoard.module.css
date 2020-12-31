@@ -1,0 +1,35 @@
+.board {
+  border: 2px solid black;
+  width: 50%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  padding: 4px;
+  border: 2px solid black;
+  margin: 4px;
+}
+
+.bio {
+  width: 20%;
+  border-right: 2px dashed black;
+}
+
+.workers {
+  width: 50%;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  postion: absolute;
+}
+
+.abilities {
+  border: 2px solid black;
+  height: 90px;
+  padding: 4px;
+  margin: 4px;
+}
+

@@ -7,8 +7,8 @@ import {
 
 const HexMap = () => (
   <HexEngine
-    width={620}
-    height={440}
+    width={420}
+    height={420}
     viewBox={{
       x: -100,
       y: -100,
