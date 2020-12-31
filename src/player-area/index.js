@@ -89,7 +89,7 @@ const PlayerArea = ({
         handleDiscard={handlePlayerDiscard}
       />
 
-      <HexMap />
+      <FactionBoard />
     </div>
   );
 }
