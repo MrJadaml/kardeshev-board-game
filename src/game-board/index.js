@@ -14,7 +14,24 @@ const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
       <h1>Game Board</h1>
 
       <Tracker name="Session" />
-      <Market />
+
+      <div className={styles.mid}>
+        <div className={styles.research}>
+          Research Pact
+        </div>
+
+        <Market />
+      </div>
+
+      <div className={styles.bottom}>
+        <div className={styles.reference}>
+          Icon Reference
+        </div>
+        <div className={styles.oreMarket}>
+          Ore Market??
+        </div>
+      </div>
+
 
       <h2>Exploration Cards</h2>
       <div className={styles.cardStacks}>

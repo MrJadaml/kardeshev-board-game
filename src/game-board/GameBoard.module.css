@@ -1,5 +1,5 @@
 .board {
-  border: 1px solid black;
+  border: 2px solid black;
   margin: 8px;
 }
 
@@ -8,3 +8,15 @@
   justify-direction: row;
   justify-content: center;
 }
+
+.research {
+  border: 2px solid black;
+  width: 120px;
+  height: 470px;
+  margin: 8px;
+}
+
+.mid {
+  display: flex;
+}
+

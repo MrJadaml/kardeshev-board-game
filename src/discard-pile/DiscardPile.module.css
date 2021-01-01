@@ -1,10 +1,11 @@
 .discardPile {
   padding: 8px;
+  width: 120px;
 }
 
 .cardBack {
-  width: 50px;
-  width: 70px;
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
   opacity: 0.4;
-  border-radius: 5px;
 }

@@ -1,0 +1,15 @@
+.tracker {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.step {
+  border-right: 1px dashed black;
+  text-align: center;
+  padding: 8px;
+  align-self: center;
+  width: 100%;
+}

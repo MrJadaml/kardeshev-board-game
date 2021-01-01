@@ -1,9 +1,10 @@
 .deck {
   padding: 8px;
+  width: 120px;
 }
 
 .cardBack {
-  width: 50px;
-  width: 70px;
-  border-radius: 5px;
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
 }
