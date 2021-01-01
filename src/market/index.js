@@ -1,5 +1,6 @@
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
+import cardBack from '../assets/card-back-3.png';
 
 import styles from './Market.module.css';
 
@@ -13,11 +14,13 @@ const Market = () => {
           name="Technology"
           handleDraw={() => {}}
           cards={[]}
+          cardBack={cardBack}
         />
 
         <DiscardPile
           name="Technology"
           cards={[]}
+          cardBack={cardBack}
         />
       </div>
     </div>

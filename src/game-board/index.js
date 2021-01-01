@@ -6,6 +6,7 @@ import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 
 import styles from './GameBoard.module.css';
+import cardBack from '../assets/card-back-1.png';
 
 const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
   return (
@@ -21,16 +22,17 @@ const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
           name="Exploration"
           handleDraw={handleDraw}
           cards={explorationDeck}
+          cardBack={cardBack}
         />
 
         <DiscardPile
           name="Exploration"
           cards={explorationDiscardPile}
+          cardBack={cardBack}
         />
       </div>
     </div>
   );
 }
-
 
 export default GameBoard;

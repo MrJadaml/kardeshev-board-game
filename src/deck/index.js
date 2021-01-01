@@ -1,10 +1,13 @@
 import styles from './Deck.module.css';
 
-const Deck = ({ cards, name, handleDraw }) => {
+const Deck = ({ cards, cardBack, name, handleDraw }) => {
   return (
     <div className={styles.deck}>
       <div> {cards.length} cards left</div>
-      <div> [ deck ] </div>
+      <img
+        src={cardBack}
+        className={styles.cardBack}
+      />
       <div>{name} Deck</div>
 
       <div>

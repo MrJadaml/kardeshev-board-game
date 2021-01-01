@@ -1,10 +1,13 @@
 import styles from './DiscardPile.module.css';
 
-const DiscardPile = ({ cards, name }) => {
+const DiscardPile = ({ cards, cardBack, name }) => {
   return (
     <div className={styles.discardPile}>
       <div> {cards.length} cards</div>
-      <div> [ pile ] </div>
+      <img
+        src={cardBack}
+        className={styles.cardBack}
+      />
       <div>{name} Discard Pile</div>
 
       <div>
