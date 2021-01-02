@@ -37,10 +37,6 @@ const FactionBoard = () => {
         </div>
 
         <HexMap />
-
-        <div className={styles.satellite}>
-          <Satellite />
-        </div>
       </div>
     </div>
   );
