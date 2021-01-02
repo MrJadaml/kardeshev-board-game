@@ -1,6 +1,5 @@
 import styles from './Buildings.module.css';
 import Storage from '../storage/';
-
 const Buildings = () => {
   return (
     <div className={styles.buildings}>

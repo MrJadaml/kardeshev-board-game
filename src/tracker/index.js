@@ -4,7 +4,7 @@ const Tracker = ({ name }) => {
   return (
     <div className={styles.tracker}>
       {Array.from({ length: 21 }, (x, step) => (
-        <div className={styles.step}>
+        <div className={styles.step} key={step}>
           {step}
         </div>
       ))}

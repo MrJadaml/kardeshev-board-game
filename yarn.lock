@@ -6995,11 +6995,6 @@ media-typer@0.3.0:
   resolved "https://registry.npmjs.org/media-typer/-/media-typer-0.3.0.tgz#8710d7af0aa626f8fffa1ce00168545263255748"
   integrity sha1-hxDXrwqmJvj/+hzgAWhUUmMlV0g=
 
-memoize-one@^4.0.2:
-  version "4.1.0"
-  resolved "https://registry.npmjs.org/memoize-one/-/memoize-one-4.1.0.tgz#a2387c58c03fff27ca390c31b764a79addf3f906"
-  integrity sha512-2GApq0yI/b22J2j9rhbrAlsHb0Qcz+7yWxeLG8h+95sl1XPUgeLimQSOdur4Vw7cUhrBHwaUZxWFZueojqNRzA==
-
 memory-fs@^0.4.1:
   version "0.4.1"
   resolved "https://registry.npmjs.org/memory-fs/-/memory-fs-0.4.1.tgz#3a9a20b8462523e447cfbc7e8bb80ed667bfc552"
@@ -8936,14 +8931,6 @@ react-error-overlay@^6.0.8:
   version "6.0.8"
   resolved "https://registry.npmjs.org/react-error-overlay/-/react-error-overlay-6.0.8.tgz#474ed11d04fc6bda3af643447d85e9127ed6b5de"
   integrity sha512-HvPuUQnLp5H7TouGq3kzBeioJmXms1wHy9EGjz2OURWBp4qZO6AfGEcnxts1D/CbwPLRAgTMPCEgYhA3sEM4vw==
-
-react-hex-engine@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/react-hex-engine/-/react-hex-engine-1.1.1.tgz#350c76965e476db6fdf16bf031c6b97a9bf792fc"
-  integrity sha512-v+h/I14c2cR430mP4eG8ZdnWRcQh3WEHMWUUW0WZntmLdNgOe7EN63r5s46LJHBh8snzN+RKuiPi0YtEvv0Kkw==
-  dependencies:
-    classnames "^2.2.5"
-    memoize-one "^4.0.2"
 
 react-hexgrid@^1.0.3:
   version "1.0.3"

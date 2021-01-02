@@ -2,32 +2,20 @@ import React from 'react';
 import { useState } from 'react';
 
 import { deepClone } from 'lodash';
+import {
+  HexGrid,
+  GridGenerator,
+  Layout,
+  Hexagon,
+} from 'react-hexgrid';
+
+import { getPlanetHexes } from '../utils/hex/';
 
 import './stuff.css';
 import styles from './HexMap.module.css';
 
-// import {
-  // Hexagon,
-  // HexEngine,
-  // GridGenerator,
-// } from "react-hex-engine";
-
-import { HexGrid, GridGenerator, Layout, Hexagon, Text, Pattern, Path, Hex } from 'react-hexgrid';
-
 const HexMap = () => {
-  const initHexes = GridGenerator
-    .hexagon(3)
-    .map((hex, idx) => ({ ...hex, id: idx }))
-
-  initHexes.push({
-    q: -3,
-    r: 5,
-    s: -3,
-    id: 38,
-    className: 'satellite'
-  })
-
-  const [hexes, setHexes] = useState(initHexes);
+  const [hexes, setHexes] = useState(getPlanetHexes());
 
   const handleClick = (e, hex) => {
     const hexIndex = hexes.findIndex((hexagon) => {
@@ -41,7 +29,6 @@ const HexMap = () => {
 
     const nextHexes = [...hexes];
     nextHexes[hexIndex] = nextHex.props;
-    console.log(nextHexes)
     setHexes(nextHexes);
   }
 
@@ -56,16 +43,16 @@ const HexMap = () => {
         }}
         spacing={1.1}
       >
-    {hexes.map(hex => (
-      <Hexagon
-        {...hex}
-        key={hex.toString()}
-        onClick={handleClick}
-      />
-    ))}
-  </Layout>
-  </HexGrid>
-);
+        {hexes.map(hex => (
+          <Hexagon
+            {...hex}
+            key={hex.id}
+            onClick={handleClick}
+          />
+        ))}
+      </Layout>
+    </HexGrid>
+  );
 }
 
 export default HexMap;

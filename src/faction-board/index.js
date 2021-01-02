@@ -2,7 +2,6 @@ import styles from './FactionBoard.module.css';
 import HexMap from '../hex-map/';
 import Workers from '../workers/';
 import Buildings from '../buildings/';
-import Satellite from '../satellite/';
 
 const FactionBoard = () => {
   const reputation = [10,9,8,7,6,5,4,3,2,1,0,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10];
@@ -21,7 +20,7 @@ const FactionBoard = () => {
       <div className={styles.body}>
         <div className={styles.reputationTrack}>
           {reputation.map((value) => (
-            <div className={styles.reputation}>
+            <div className={styles.reputation} key={value}>
               {value}
             </div>
           ))}
