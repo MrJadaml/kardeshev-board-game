@@ -30,16 +30,19 @@ const HexMap = () => {
   const [hexes, setHexes] = useState(initHexes);
 
   const handleClick = (e, hex) => {
-    console.log(hex)
     const hexIndex = hexes.findIndex((hexagon) => {
-      return hexagon.id === hex.id
+      return hexagon.id === hex.props.id
     });
 
-    // hex.selected = true;
-    // hex.classes = { highlighted: 'highlighted' }
-    const nextHexes = []
+    const nextHex = {
+      ...hex,
+      props: { ...hex.props, className: 'bob' },
+    }
 
-    // setHexes = nextHexes;
+    const nextHexes = [...hexes];
+    nextHexes[hexIndex] = nextHex.props;
+    console.log(nextHexes)
+    setHexes(nextHexes);
   }
 
   return (
@@ -57,6 +60,7 @@ const HexMap = () => {
       <Hexagon
         {...hex}
         key={hex.toString()}
+        onClick={handleClick}
       />
     ))}
   </Layout>
