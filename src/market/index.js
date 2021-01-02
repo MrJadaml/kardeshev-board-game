@@ -111,23 +111,12 @@ const Market = () => {
           />
 
           <div className={styles.cardSlot}>
-            {techHand[4] && (
+            {techHand[7] && (
               <>
-                <h4>{techHand[4].name}</h4>
-                <div>{techHand[4].description}</div>
+                <h4>{techHand[7].name}</h4>
+                <div>{techHand[7].description}</div>
                 ---
-                <div>{techHand[4].flavorText}</div>
-              </>
-            )}
-          </div>
-
-          <div className={styles.cardSlot}>
-            {techHand[5] && (
-              <>
-                <h4>{techHand[5].name}</h4>
-                <div>{techHand[5].description}</div>
-                ---
-                <div>{techHand[5].flavorText}</div>
+                <div>{techHand[7].flavorText}</div>
               </>
             )}
           </div>
@@ -144,12 +133,23 @@ const Market = () => {
           </div>
 
           <div className={styles.cardSlot}>
-            {techHand[7] && (
+            {techHand[5] && (
               <>
-                <h4>{techHand[7].name}</h4>
-                <div>{techHand[7].description}</div>
+                <h4>{techHand[5].name}</h4>
+                <div>{techHand[5].description}</div>
                 ---
-                <div>{techHand[7].flavorText}</div>
+                <div>{techHand[5].flavorText}</div>
+              </>
+            )}
+          </div>
+
+          <div className={styles.cardSlot}>
+            {techHand[4] && (
+              <>
+                <h4>{techHand[4].name}</h4>
+                <div>{techHand[4].description}</div>
+                ---
+                <div>{techHand[4].flavorText}</div>
               </>
             )}
           </div>
