@@ -6,11 +6,13 @@ import { deepClone } from 'lodash';
 import './stuff.css';
 import styles from './HexMap.module.css';
 
-import {
-  Hexagon,
-  HexEngine,
-  GridGenerator,
-} from "react-hex-engine";
+// import {
+  // Hexagon,
+  // HexEngine,
+  // GridGenerator,
+// } from "react-hex-engine";
+
+import { HexGrid, GridGenerator, Layout, Hexagon, Text, Pattern, Path, Hex } from 'react-hexgrid';
 
 const HexMap = () => {
   const initHexes = GridGenerator
@@ -41,29 +43,25 @@ const HexMap = () => {
   }
 
   return (
-    <HexEngine
-      width={420}
+    <HexGrid
+      width={520}
       height={420}
-      viewBox={{
-        x: -100,
-        y: -100,
-        width: 200,
-        height: 200,
-      }}
-      size={{x: 15,y: 15}}
-      origin={{x: 0,y: 0}}
-      spacing={1.1}
     >
-      {hexes.map(hex => (
-        <Hexagon
-          {...hex}
-          key={hex.toString()}
-          onClick={handleClick}
-          className={hex.className}
-        />
-      ))}
-    </HexEngine>
-  );
+      <Layout size={{
+          x: 6,
+          y: 6,
+        }}
+        spacing={1.1}
+      >
+    {hexes.map(hex => (
+      <Hexagon
+        {...hex}
+        key={hex.toString()}
+      />
+    ))}
+  </Layout>
+  </HexGrid>
+);
 }
 
 export default HexMap;
