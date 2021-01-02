@@ -6,6 +6,7 @@ const Deck = ({ cards, cardBack, name, handleDraw }) => {
       <div> {cards.length} cards left</div>
       <img
         src={cardBack}
+        alt="card back"
         className={styles.cardBack}
       />
       <div>{name} Deck</div>

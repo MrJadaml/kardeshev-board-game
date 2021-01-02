@@ -1,10 +1,8 @@
 import React from 'react';
 import { useState } from 'react';
 
-import { deepClone } from 'lodash';
 import {
   HexGrid,
-  GridGenerator,
   Layout,
   Hexagon,
 } from 'react-hexgrid';
@@ -12,7 +10,6 @@ import {
 import { getPlanetHexes } from '../utils/hex/';
 
 import './stuff.css';
-import styles from './HexMap.module.css';
 
 const HexMap = () => {
   const [hexes, setHexes] = useState(getPlanetHexes());

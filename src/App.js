@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 import GameBoard  from './game-board/'
 import PlayerArea  from './player-area/'
-import Box  from './box/'
 import { draw, shuffle } from './utils/cards';
 import { starterCards } from './content/cards/exploration/';
 
@@ -35,8 +34,6 @@ const App = () => {
         setExplorationDiscardPile={setExplorationDiscardPile}
         setExplorationDeck={setExplorationDeck}
       />
-
-      {/* <Box /> */}
     </div>
   );
 }

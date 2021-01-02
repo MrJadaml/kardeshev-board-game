@@ -6,7 +6,6 @@ import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import CardRiver from '../card-river/';
 import FactionBoard from '../faction-board/';
-import HexMap from '../hex-map/';
 import cardBack from '../assets/card-back-2.png';
 
 import { draw, shuffle } from '../utils/cards';

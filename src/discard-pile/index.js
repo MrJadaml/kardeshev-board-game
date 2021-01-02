@@ -6,6 +6,7 @@ const DiscardPile = ({ cards, cardBack, name }) => {
       <div> {cards.length} cards</div>
       <img
         src={cardBack}
+        alt="card back"
         className={styles.cardBack}
       />
       <div>{name} Discard Pile</div>

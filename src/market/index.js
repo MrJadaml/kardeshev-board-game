@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
-import Card from '../cards/card/';
 
 import { draw, shuffle } from '../utils/cards';
 import { starterCards } from '../content/cards/faction/starters';
