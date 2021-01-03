@@ -18,18 +18,12 @@ import cardBack from '../../assets/card-back-3.png';
 import { draw, shuffle } from '../utils/cards';
 import styles from './PlayerArea.module.css';
 
-const PlayerArea = ({
-  // explorationDraw,
-  handleExplorationDiscard,
-  // setExplorationDiscardPile,
-  // setExplorationDeck,
-}) => {
-
+const PlayerArea = ({ }) => {
   const [explorationDeck, setExplorationDeck] = useRecoilState(explorationDeckState);
   const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
   const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
 
-  const [playerDeck, setPlayerDeck] = useState(shuffle(starterCards));
+  const [playerDeck, setPlayerDeck] = useState(starterCards);
   const [playerHand, setPlayerHand] = useState([]);
   const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
 
@@ -54,16 +48,18 @@ const PlayerArea = ({
   }
 
   const handleEndTurn = () => {
-    handleExplorationDiscard()
-
-    setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
-    setPlayerDiscardPile([...playerHand, ...playerDiscardPile]);
-    setPlayerHand([]);
+    const nextDiscards = [...playerHand, ...playerDiscardPile];
 
     if (playerDeck.length === 0) {
-      setPlayerDeck(shuffle(playerDiscardPile));
+      setPlayerDeck(shuffle(nextDiscards));
       setPlayerDiscardPile([]);
+    } else {
+      setPlayerDiscardPile(nextDiscards);
     }
+
+    setPlayerHand([]);
+    setExplorationDiscardPile([...playerExplorationDraw, ...explorationDiscardPile]);
+    setPlayerExplorationDraw([]);
   }
 
   return (

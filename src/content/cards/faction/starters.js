@@ -74,9 +74,9 @@ const burner = {
 
 export const starterCards = idGenerator([
   worker,
-  ...cardCloner(science, 4),
-  ...cardCloner(ore, 3),
-  ...cardCloner(credit, 3),
+  // ...cardCloner(science, 4),
+  // ...cardCloner(ore, 3),
+  // ...cardCloner(credit, 3),
   faction1,
   faction2,
   faction3,
