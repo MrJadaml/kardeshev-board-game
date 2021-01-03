@@ -1,0 +1,7 @@
+.cardSlot {
+  width: 104px;
+  height: 144px;
+  border: 1px solid black;
+  margin: 8px;
+  margin-top: 24px;
+}

@@ -1,24 +1,37 @@
 import { useState } from 'react';
-import styles from './PlayerArea.module.css';
+import { useRecoilState } from 'recoil';
 
-import { starterCards } from '../content/cards/faction/starters';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import CardRiver from '../card-river/';
 import FactionBoard from '../faction-board/';
-import cardBack from '../assets/card-back-2.png';
 
+import {
+  explorationDeckState,
+  playerExplorationDrawState,
+  explorationDiscardPileState,
+  playerDiscardPileState,
+} from '../../state/atoms.js';
+
+import { starterCards } from '../../content/cards/faction/starters';
+import cardBack from '../../assets/card-back-3.png';
 import { draw, shuffle } from '../utils/cards';
+import styles from './PlayerArea.module.css';
 
 const PlayerArea = ({
-  explorationDraw,
+  // explorationDraw,
   handleExplorationDiscard,
-  setExplorationDiscardPile,
-  setExplorationDeck,
+  // setExplorationDiscardPile,
+  // setExplorationDeck,
 }) => {
+
+  const [explorationDeck, setExplorationDeck] = useRecoilState(explorationDeckState);
+  const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
+  const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
+
   const [playerDeck, setPlayerDeck] = useState(shuffle(starterCards));
   const [playerHand, setPlayerHand] = useState([]);
-  const [playerDiscardPile, setPlayerDiscardPile] = useState([]);
+  const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
 
   const handlePlayerDraw = () => {
     setPlayerHand([...playerHand, ...draw(playerDeck)]);
@@ -65,7 +78,7 @@ const PlayerArea = ({
 
       <CardRiver
         name="Exploration"
-        cards={explorationDraw}
+        cards={playerExplorationDraw}
       />
 
       ------------------------

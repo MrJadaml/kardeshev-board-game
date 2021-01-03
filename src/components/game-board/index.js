@@ -1,12 +1,34 @@
+import { useRecoilState } from 'recoil';
+
 import Tracker from '../tracker/';
 import Market from '../market/';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 
-import styles from './GameBoard.module.css';
-import cardBack from '../assets/card-back-1.png';
+import {
+  explorationDeckState,
+  playerExplorationDrawState,
+  explorationDiscardPileState,
+} from '../../state/atoms.js';
 
-const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
+import { draw } from '../utils/cards';
+import cardBack from '../../assets/card-back-1.png';
+import styles from './GameBoard.module.css';
+
+const GameBoard = ({ handleDraw }) => {
+  const [explorationDeck, setExplorationDeck] = useRecoilState(explorationDeckState);
+  const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
+  const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
+
+  const handleExplorationDraw = () => {
+    setPlayerExplorationDraw([...playerExplorationDraw, ...draw(explorationDeck)]);
+  }
+
+  const handleExplorationDiscard = () => {
+    setExplorationDiscardPile([...playerExplorationDraw, ...explorationDiscardPile]);
+    setPlayerExplorationDraw([]);
+  }
+
   return (
     <div className={styles.board}>
       <h1>Game Board</h1>
@@ -35,7 +57,7 @@ const GameBoard = ({ handleDraw, explorationDeck, explorationDiscardPile }) => {
       <div className={styles.cardStacks}>
         <Deck
           name="Exploration"
-          handleDraw={handleDraw}
+          handleDraw={handleExplorationDraw}
           cards={explorationDeck}
           cardBack={cardBack}
         />

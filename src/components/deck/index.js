@@ -21,5 +21,4 @@ const Deck = ({ cards, cardBack, name, handleDraw }) => {
   );
 }
 
-
 export default Deck;
