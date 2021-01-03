@@ -10,17 +10,17 @@ import { shuffle } from '../components/utils/cards';
 import { starterCards } from '../content/cards/exploration/';
 
 export const explorationDeckState = atom({
-  key: 'explorationdeckstate',
+  key: 'explorationDeckState',
   default: shuffle(starterCards),
 });
 
 export const explorationDiscardPileState = atom({
-  key: 'explorationdiscardpilestate',
+  key: 'explorationDiscardPileState',
   default: [],
 });
 
 export const playerExplorationDrawState = atom({
-  key: 'playerexplorationhandstate',
+  key: 'playerExplorationHandState',
   default: [],
 });
 
@@ -30,6 +30,6 @@ export const playerDiscardPileState = atom({
 });
 
 export const techDrawState = atom({
-  key: 'playerDiscardPileState',
+  key: 'techDrawState',
   default: [null, null, null, null, null, null, null, null],
 });
