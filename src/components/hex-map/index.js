@@ -16,6 +16,7 @@ import hexPlainsForest from '../../assets/hex-plains-forest.png';
 import hexPlains from '../../assets/hex-plains.png';
 import hexWater from '../../assets/hex-water.png';
 
+import styles from './HexMap.module.css';
 import './stuff.css';
 
 const HexMap = () => {
@@ -27,12 +28,13 @@ const HexMap = () => {
       return hexagon.id === hex.props.id
     });
 
-    const randomNumber = Math.floor(Math.random() * (8-2)+1);
+    const randomNumber = Math.floor(Math.random() * 6) + 1;
+
     const nextHex = {
       ...hex,
       props: {
         ...hex.props,
-        fill: `pat-${randomNumber}`,
+        fill: `mapHex-${randomNumber}`,
       },
     }
 
@@ -52,6 +54,7 @@ const HexMap = () => {
       >
         {hexes.map(hex => (
           <Hexagon
+            className={styles.hex}
             {...hex}
             key={hex.id}
             onClick={handleClick}
@@ -59,12 +62,12 @@ const HexMap = () => {
         ))}
       </Layout>
 
-      <Pattern id="pat-1" link={hexDesert} size={HEX_SIZE} />
-      <Pattern id="pat-2" link={hexForest} size={HEX_SIZE} />
-      <Pattern id="pat-3" link={hexHill} size={HEX_SIZE} />
-      <Pattern id="pat-4" link={hexPlainsForest} size={HEX_SIZE} />
-      <Pattern id="pat-5" link={hexPlains} size={HEX_SIZE} />
-      <Pattern id="pat-6" link={hexWater} size={HEX_SIZE} />
+      <Pattern id="mapHex-1" link={hexDesert} size={HEX_SIZE} />
+      <Pattern id="mapHex-2" link={hexForest} size={HEX_SIZE} />
+      <Pattern id="mapHex-3" link={hexHill} size={HEX_SIZE} />
+      <Pattern id="mapHex-4" link={hexPlainsForest} size={HEX_SIZE} />
+      <Pattern id="mapHex-5" link={hexPlains} size={HEX_SIZE} />
+      <Pattern id="mapHex-6" link={hexWater} size={HEX_SIZE} />
     </HexGrid>
   );
 }

@@ -18,10 +18,10 @@ const Storage = ({ buildingType }) => {
   const HEX_SIZE = { x: 42, y: 42 };
 
   const initHexes = [
-    { q: -4, r: 2, s: 1 },
-    { q: -2, r: 1, s: 1 },
-    { q: 0, r: 0, s: 0 },
-    { q: 2, r: -1, s: 0 },
+    { id: 1, q: -4, r: 2, s: 1 },
+    { id: 2, q: -2, r: 1, s: 1 },
+    { id: 3, q: 0, r: 0, s: 0 },
+    { id: 4, q: 2, r: -1, s: 0 },
   ]
 
   const [hexes, setHexes] = useState(initHexes);
@@ -32,11 +32,13 @@ const Storage = ({ buildingType }) => {
     });
 
     const randomNumber = Math.floor(Math.random() * (8-2)+1);
+
+    console.log(hex, hexes)
     const nextHex = {
       ...hex,
       props: {
         ...hex.props,
-        fill: `pat-${randomNumber}`,
+        fill: `buildingHex-${buildingType}`,
       },
     }
 
@@ -52,20 +54,20 @@ const Storage = ({ buildingType }) => {
         height={40}
       >
         <Layout size={HEX_SIZE}>
-          {hexes.map((hex) => (
+          {hexes.map((hex, idx) => (
             <Hexagon
-              key={`${buildingType}-${hex.q}`}
+              className={styles.hex}
+              key={`${idx}-${hex.q}`}
               {...hex}
-              fill={`pat-${buildingType}`}
               onClick={handleClick}
             />
           ))};
         </Layout>
 
-        <Pattern id="pat-1" link={hexShips} size={HEX_SIZE} />
-        <Pattern id="pat-2" link={hexOre}  size={HEX_SIZE} />
-        <Pattern id="pat-3" link={hexLab}  size={HEX_SIZE} />
-        <Pattern id="pat-4" link={hexCity}  size={HEX_SIZE} />
+        <Pattern id="buildingHex-1" link={hexShips} size={HEX_SIZE} />
+        <Pattern id="buildingHex-2" link={hexOre}  size={HEX_SIZE} />
+        <Pattern id="buildingHex-3" link={hexLab}  size={HEX_SIZE} />
+        <Pattern id="buildingHex-4" link={hexCity}  size={HEX_SIZE} />
       </HexGrid>
     </div>
   );
