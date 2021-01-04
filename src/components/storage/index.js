@@ -11,6 +11,7 @@ import hexShips from '../../assets/hex-ship.png';
 import hexOre from '../../assets/hex-mine.png';
 import hexLab from '../../assets/hex-lab.png';
 import hexCity from '../../assets/hex-city.png';
+import meeple from '../../assets/meeple.png';
 
 import styles from './Storage.module.css';
 
@@ -25,6 +26,22 @@ const Storage = ({ buildingType }) => {
   ]
 
   const [hexes, setHexes] = useState(initHexes);
+  const [isMeeple, setMeeple] = useState(false)
+
+  const handleDragEnd = () => {
+    setMeeple(false);
+  }
+
+  const handleDrop = (e) => {
+    console.log('drop')
+    e.preventDefault();
+    setMeeple(true)
+  }
+
+  const handleDragOver = (e) => {
+    console.log('drag over')
+    e.preventDefault();
+  }
 
   const handleClick = (e, hex) => {
     const hexIndex = hexes.findIndex((hexagon) => {
@@ -33,7 +50,6 @@ const Storage = ({ buildingType }) => {
 
     const randomNumber = Math.floor(Math.random() * (8-2)+1);
 
-    console.log(hex, hexes)
     const nextHex = {
       ...hex,
       props: {
@@ -48,7 +64,14 @@ const Storage = ({ buildingType }) => {
   }
 
   return (
-    <div className={styles.storage}>
+    <div
+      onDrop={handleDrop}
+      onDragOver={handleDragOver}
+      onDragEnd={handleDragEnd}
+      className={styles.storage}
+    >
+      {isMeeple && <img src={meeple} alt="meeple" draggable="true" id="p1" />}
+
       <HexGrid
         width={260}
         height={40}

@@ -1,4 +1,5 @@
 import { useRecoilState } from 'recoil';
+import { useState } from 'react';
 
 import Tracker from '../tracker/';
 import Market from '../market/';
@@ -13,12 +14,30 @@ import {
 
 import { draw } from '../utils/cards';
 import cardBack from '../../assets/card-back-1.png';
+import meeple from '../../assets/meeple.png';
 import styles from './GameBoard.module.css';
 
 const GameBoard = ({ handleDraw }) => {
   const [explorationDeck, setExplorationDeck] = useRecoilState(explorationDeckState);
   const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
   const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
+  const [isMeeple, setMeeple] = useState(false)
+
+  const handleDragEnd = () => {
+    setMeeple(false);
+  }
+
+  const handleDrop = (e) => {
+    console.log('drop')
+    e.preventDefault();
+    setMeeple(true)
+  }
+
+  const handleDragOver = (e) => {
+    console.log('drag over')
+    e.preventDefault();
+  }
+
 
   const handleExplorationDraw = () => {
     setPlayerExplorationDraw([...playerExplorationDraw, ...draw(explorationDeck)]);
@@ -36,8 +55,15 @@ const GameBoard = ({ handleDraw }) => {
       <Tracker name="Session" />
 
       <div className={styles.mid}>
-        <div className={styles.research}>
+        <div
+          className={styles.research}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          onDragEnd={handleDragEnd}
+        >
           Research Pact
+
+          {isMeeple && <img src={meeple} alt="meeple" draggable="true" id="p1" />}
         </div>
 
         <Market />

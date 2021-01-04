@@ -1,0 +1,10 @@
+.workerHex {
+  fill: grey;
+}
+
+.hexText {
+  font-size: 1em;
+  fill: white;
+  fill-opacity: 0.7;
+  transition: fill-opacity .5s;
+}

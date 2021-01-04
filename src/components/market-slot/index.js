@@ -1,6 +1,8 @@
 import styles from './MarketSlot.module.css';
 import { useRecoilState } from 'recoil';
+import { useState } from 'react';
 
+import meeple from '../../assets/meeple.png';
 import {
   playerDiscardPileState,
   techDrawState,
@@ -9,6 +11,22 @@ import {
 const MarketSlot = ({ card, marketIdx }) => {
   const [techDraw, setTechDraw] = useRecoilState(techDrawState);
   const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
+  const [isMeeple, setMeeple] = useState(false)
+
+  const handleDragEnd = () => {
+    setMeeple(false);
+  }
+
+  const handleDrop = (e) => {
+    console.log('drop')
+    e.preventDefault();
+    setMeeple(true)
+  }
+
+  const handleDragOver = (e) => {
+    console.log('drag over')
+    e.preventDefault();
+  }
 
   const handleTake = () => {
     const nextTechDraw = techDraw.reduce((acc, card, idx) => {
@@ -27,7 +45,13 @@ const MarketSlot = ({ card, marketIdx }) => {
 
   return (
     <div className={styles.marketSlot}>
-      <div className={styles.cardSlot}>
+      <div className={styles.cardSlot}
+        onDrop={handleDrop}
+        onDragOver={handleDragOver}
+        onDragEnd={handleDragEnd}
+      >
+        {isMeeple && <img src={meeple} alt="meeple" draggable="true" id="p1" />}
+
         {card && (
           <div>
             <h4>{card.name}</h4>
