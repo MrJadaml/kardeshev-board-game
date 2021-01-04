@@ -1,5 +1,4 @@
 import './App.css';
-import { useState } from 'react';
 import { RecoilRoot } from 'recoil';
 
 import GameBoard  from './components/game-board/'

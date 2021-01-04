@@ -5,6 +5,7 @@ import {
   Layout,
   Hexagon,
   Pattern,
+  Text,
 } from 'react-hexgrid';
 
 import hexShips from '../../assets/hex-ship.png';
@@ -19,10 +20,10 @@ const Storage = ({ buildingType }) => {
   const HEX_SIZE = { x: 42, y: 42 };
 
   const initHexes = [
-    { id: 1, q: -4, r: 2, s: 1 },
-    { id: 2, q: -2, r: 1, s: 1 },
-    { id: 3, q: 0, r: 0, s: 0 },
-    { id: 4, q: 2, r: -1, s: 0 },
+    { id: 1, fill: `buildingHex-${buildingType}`, text: '+1 Worker', q: -4, r: 2, s: 1 },
+    { id: 2, fill: `buildingHex-${buildingType}`, text: '+1 build', q: -2, r: 1, s: 1 },
+    { id: 3, fill: `buildingHex-${buildingType}`, text: '+1 Worker', q: 0, r: 0, s: 0 },
+    { id: 4, fill: `buildingHex-${buildingType}`, text: '+1 Faction Card', q: 2, r: -1, s: 0 },
   ]
 
   const [hexes, setHexes] = useState(initHexes);
@@ -33,13 +34,11 @@ const Storage = ({ buildingType }) => {
   }
 
   const handleDrop = (e) => {
-    console.log('drop')
     e.preventDefault();
     setMeeple(true)
   }
 
   const handleDragOver = (e) => {
-    console.log('drag over')
     e.preventDefault();
   }
 
@@ -48,13 +47,12 @@ const Storage = ({ buildingType }) => {
       return hexagon.id === hex.props.id
     });
 
-    const randomNumber = Math.floor(Math.random() * (8-2)+1);
-
     const nextHex = {
       ...hex,
       props: {
         ...hex.props,
-        fill: `buildingHex-${buildingType}`,
+        fill: null,
+        className: styles.unlocked,
       },
     }
 
@@ -83,7 +81,13 @@ const Storage = ({ buildingType }) => {
               key={`${idx}-${hex.q}`}
               {...hex}
               onClick={handleClick}
-            />
+            >
+              {!hex.fill && (
+                <Text className={styles.hexText}>
+                  {hex.text}
+                </Text>
+              )}
+            </Hexagon>
           ))};
         </Layout>
 

@@ -1,3 +1,15 @@
 .hex:hover {
   cursor: pointer;
 }
+
+.unlocked {
+  fill: blue;
+}
+
+.hexText {
+  font-size: 1.1em;
+  font-weight: bold;
+  fill: white;
+  fill-opacity: 0.7;
+  transition: fill-opacity .5s;
+}
