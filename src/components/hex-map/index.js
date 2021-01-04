@@ -5,9 +5,16 @@ import {
   HexGrid,
   Layout,
   Hexagon,
+  Pattern,
 } from 'react-hexgrid';
 
 import { getPlanetHexes } from '../utils/hex/';
+import hexDesert from '../../assets/hex-desert.png';
+import hexForest from '../../assets/hex-forest.png';
+import hexHill from '../../assets/hex-hill.png';
+import hexPlainsForest from '../../assets/hex-plains-forest.png';
+import hexPlains from '../../assets/hex-plains.png';
+import hexWater from '../../assets/hex-water.png';
 
 import './stuff.css';
 
@@ -19,9 +26,13 @@ const HexMap = () => {
       return hexagon.id === hex.props.id
     });
 
+    const randomNumber = Math.floor(Math.random() * (8-2)+1);
     const nextHex = {
       ...hex,
-      props: { ...hex.props, className: 'bob' },
+      props: {
+        ...hex.props,
+        fill: `pat-${randomNumber}`,
+      },
     }
 
     const nextHexes = [...hexes];
@@ -48,6 +59,12 @@ const HexMap = () => {
           />
         ))}
       </Layout>
+      <Pattern id="pat-1" link={hexDesert} />
+      <Pattern id="pat-2" link={hexForest} />
+      <Pattern id="pat-3" link={hexHill} />
+      <Pattern id="pat-4" link={hexPlainsForest} />
+      <Pattern id="pat-5" link={hexPlains} />
+      <Pattern id="pat-6" link={hexWater} />
     </HexGrid>
   );
 }
