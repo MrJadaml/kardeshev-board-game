@@ -47,9 +47,6 @@ const Storage = ({ buildingType }) => {
       return hexagon.id === hex.props.id
     });
 
-    console.log(hexIndex)
-    console.log(hexes)
-
     const isUnlockable = () => {
       if (hexIndex === 0) return true;
       if (!hexes[hexIndex -1].fill) return true;
@@ -105,12 +102,15 @@ const Storage = ({ buildingType }) => {
         <Pattern id="buildingHex-3" link={hexLab}  size={HEX_SIZE} />
         <Pattern id="buildingHex-4" link={hexCity}  size={HEX_SIZE} />
       </HexGrid>
-      <div className={styles.counters}>
-        {!hexes[0].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
-        {!hexes[1].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
-        {!hexes[2].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
-        {!hexes[3].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
-      </div>
+
+      {(buildingType !== 1) && (
+        <div className={styles.counters}>
+          {!hexes[0].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
+          {!hexes[1].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
+          {!hexes[2].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
+          {!hexes[3].fill && (<input type="number" max="25" className={styles.resourceCounter}/>)}
+        </div>
+      )}
     </div>
   );
 }

@@ -4,6 +4,7 @@ const Buildings = () => {
   return (
     <div className={styles.buildings}>
       <div className={styles.title}>Buildings</div>
+      <br />
 
       <div className={styles.storage}>
         <div className={styles.name}>
@@ -33,6 +34,7 @@ const Buildings = () => {
         <Storage buildingType={4} />
       </div>
 
+      <br />
       <div className={styles.production}>
         <div className={styles.production}>
           Mine / Lab
