@@ -19,6 +19,7 @@ import hexWater from '../../assets/hex-water.png';
 import './stuff.css';
 
 const HexMap = () => {
+  const HEX_SIZE = { x: 6, y: 6 };
   const [hexes, setHexes] = useState(getPlanetHexes());
 
   const handleClick = (e, hex) => {
@@ -45,11 +46,9 @@ const HexMap = () => {
       width={520}
       height={420}
     >
-      <Layout size={{
-          x: 6,
-          y: 6,
-        }}
-        spacing={1.1}
+      <Layout
+        size={HEX_SIZE}
+        spacing={1.03}
       >
         {hexes.map(hex => (
           <Hexagon
@@ -59,12 +58,13 @@ const HexMap = () => {
           />
         ))}
       </Layout>
-      <Pattern id="pat-1" link={hexDesert} />
-      <Pattern id="pat-2" link={hexForest} />
-      <Pattern id="pat-3" link={hexHill} />
-      <Pattern id="pat-4" link={hexPlainsForest} />
-      <Pattern id="pat-5" link={hexPlains} />
-      <Pattern id="pat-6" link={hexWater} />
+
+      <Pattern id="pat-1" link={hexDesert} size={HEX_SIZE} />
+      <Pattern id="pat-2" link={hexForest} size={HEX_SIZE} />
+      <Pattern id="pat-3" link={hexHill} size={HEX_SIZE} />
+      <Pattern id="pat-4" link={hexPlainsForest} size={HEX_SIZE} />
+      <Pattern id="pat-5" link={hexPlains} size={HEX_SIZE} />
+      <Pattern id="pat-6" link={hexWater} size={HEX_SIZE} />
     </HexGrid>
   );
 }

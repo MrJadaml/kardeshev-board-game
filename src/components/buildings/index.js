@@ -9,28 +9,28 @@ const Buildings = () => {
         <div className={styles.name}>
           Starships
         </div>
-        <Storage />
+        <Storage buildingType={1} />
       </div>
 
       <div className={styles.storage}>
         <div className={styles.name}>
           Ore
         </div>
-        <Storage />
+        <Storage buildingType={2} />
       </div>
 
       <div className={styles.storage}>
         <div className={styles.name}>
           Science
         </div>
-        <Storage />
+        <Storage buildingType={3} />
       </div>
 
       <div className={styles.storage}>
         <div className={styles.name}>
           Credits
         </div>
-        <Storage />
+        <Storage buildingType={4} />
       </div>
 
       <div className={styles.production}>
