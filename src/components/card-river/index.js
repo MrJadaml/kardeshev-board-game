@@ -2,7 +2,7 @@ import styles from './CardRiver.module.css';
 
 import Card from '../cards/card/';
 
-const CardRiver = ({ cards, name, handleDiscard }) => {
+const CardRiver = ({ cards, name, handleDiscard, className }) => {
   return (
     <div className={styles.cardRiver}>
       <h4>{name} Card River</h4>

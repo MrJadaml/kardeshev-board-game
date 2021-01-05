@@ -6,7 +6,7 @@ import DiscardPile from '../discard-pile/';
 import MarketSlot from '../market-slot/';
 
 import { draw, shuffle } from '../utils/cards';
-import { starterCards } from '../../content/cards/exploration/';
+import { marketCards } from '../../content/cards/action/market';
 import { techDrawState } from '../../state/atoms.js';
 import cardBack from '../../assets/card-back-3.png';
 
@@ -15,7 +15,7 @@ import styles from './Market.module.css';
 import { cloneDeep } from 'lodash';
 
 const Market = () => {
-  const [techDeck, setTechDeck] = useState(shuffle(starterCards));
+  const [techDeck, setTechDeck] = useState(shuffle(marketCards));
   const [techDraw, setTechDraw] = useRecoilState(techDrawState);
   const [techDiscardPile, setTechDiscardPile] = useState([]);
 

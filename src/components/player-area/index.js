@@ -27,6 +27,12 @@ const PlayerArea = ({ }) => {
   const [playerHand, setPlayerHand] = useState([]);
   const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
 
+  const [isDiscardsVisible, setIsDiscardsVisible] = useState(false);
+
+  const handleToggleDiscardViewer = () => {
+    setIsDiscardsVisible(!isDiscardsVisible)
+  }
+
   const handlePlayerDraw = () => {
     setPlayerHand([...playerHand, ...draw(playerDeck)]);
   }
@@ -91,6 +97,7 @@ const PlayerArea = ({ }) => {
           name="Player"
           cards={playerDiscardPile}
           cardBack={cardBack}
+          handlePeek={handleToggleDiscardViewer}
         />
       </div>
 
@@ -99,6 +106,16 @@ const PlayerArea = ({ }) => {
         cards={playerHand}
         handleDiscard={handlePlayerDiscard}
       />
+
+      {isDiscardsVisible && (
+        <div className={styles.discardView}>
+          <CardRiver
+            name="Discards"
+            cards={playerDiscardPile}
+          />
+        </div>
+      )}
+
 
       <FactionBoard />
     </div>

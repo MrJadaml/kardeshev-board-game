@@ -1,6 +1,5 @@
 import styles from './DiscardPile.module.css';
-
-const DiscardPile = ({ cards, cardBack, name }) => {
+const DiscardPile = ({ cards, cardBack, handlePeek, name }) => {
   return (
     <div className={styles.discardPile}>
       <div> {cards.length} cards</div>
@@ -13,7 +12,7 @@ const DiscardPile = ({ cards, cardBack, name }) => {
 
       <div>
         <button onClick={() => {}}>Shuffle</button>
-        <button onClick={() => {}}>Peek</button>
+        {handlePeek && <button onClick={handlePeek}>Peek</button>}
       </div>
 
       <br />

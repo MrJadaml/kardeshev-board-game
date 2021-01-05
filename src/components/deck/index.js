@@ -1,6 +1,6 @@
 import styles from './Deck.module.css';
 
-const Deck = ({ cards, cardBack, name, handleDraw }) => {
+const Deck = ({ cards, cardBack, name, handleDraw, handlePeek }) => {
   return (
     <div className={styles.deck}>
       <div> {cards.length} cards left</div>
@@ -13,7 +13,7 @@ const Deck = ({ cards, cardBack, name, handleDraw }) => {
 
       <div>
         <button onClick={handleDraw}>Draw</button>
-        <button onClick={() => {}}>Peek</button>
+        {handlePeek && <button onClick={handlePeek}>Peek</button>}
       </div>
 
       <br />

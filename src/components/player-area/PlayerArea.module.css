@@ -3,3 +3,8 @@
   justify-direction: row;
   justify-content: center;
 }
+
+.discardView {
+  width: 100%;
+  background: #FFF1EC;
+}

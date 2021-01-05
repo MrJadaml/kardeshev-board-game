@@ -4,4 +4,13 @@
   border: 1px solid black;
   margin: 8px;
   margin-top: 24px;
+  position: relative;
+}
+
+.worker {
+  position: absolute;
+}
+
+.dragHover {
+  opacity: 0.2;
 }

@@ -12,6 +12,7 @@ const MarketSlot = ({ card, marketIdx }) => {
   const [techDraw, setTechDraw] = useRecoilState(techDrawState);
   const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
   const [isMeeple, setMeeple] = useState(false)
+  const [isDragEnter, setIsDragEnter] = useState(false)
 
   const handleDragEnd = () => {
     setMeeple(false);
@@ -23,9 +24,13 @@ const MarketSlot = ({ card, marketIdx }) => {
     setMeeple(true)
   }
 
-  const handleDragOver = (e) => {
+  const handleDragEnter = (e) => {
     console.log('drag over')
+    setIsDragEnter(true);
     e.preventDefault();
+  }
+  const handleDragLeave = (e) => {
+    setIsDragEnter(false);
   }
 
   const handleTake = () => {
@@ -47,13 +52,23 @@ const MarketSlot = ({ card, marketIdx }) => {
     <div className={styles.marketSlot}>
       <div className={styles.cardSlot}
         onDrop={handleDrop}
-        onDragOver={handleDragOver}
+        onDragEnter={handleDragEnter}
+        onDragLeave={handleDragLeave}
         onDragEnd={handleDragEnd}
       >
-        {isMeeple && <img src={meeple} alt="meeple" draggable="true" id="p1" />}
+        {(isMeeple || isDragEnter) && (
+          <img
+            src={meeple}
+            alt="meeple"
+            draggable="true"
+            id="p1"
+            className={`${styles.worker} ${isDragEnter ? styles.dragHover : ''}`}
+          />
+        )}
 
         {card && (
           <div>
+            <div>Cost: {card.cost}</div>
             <h4>{card.name}</h4>
             <div>{card.description}</div>
             ---
