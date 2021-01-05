@@ -29,6 +29,7 @@ const MarketSlot = ({ card, marketIdx }) => {
     setIsDragEnter(true);
     e.preventDefault();
   }
+
   const handleDragLeave = (e) => {
     setIsDragEnter(false);
   }
