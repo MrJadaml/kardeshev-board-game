@@ -33,22 +33,6 @@ const Market = () => {
     setTechDraw(techDrawClone);
   }
 
-  const handleTechDiscard = (cardID) => {
-    let discard;
-
-    const filteredHand = techDraw.filter(card => {
-      if (card.id === cardID) {
-        discard = card;
-        return false;
-      }
-
-      return true;
-    });
-
-    setTechDraw(filteredHand);
-    setTechDiscardPile([discard, ...techDiscardPile]);
-  }
-
   return (
     <div className="game-board">
       <div className={styles.cardMarket}>

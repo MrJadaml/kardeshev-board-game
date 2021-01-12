@@ -1,8 +1,7 @@
 import styles from './CardRiver.module.css';
-
 import Card from '../cards/card/';
 
-const CardRiver = ({ cards, name, handleDiscard, className }) => {
+const CardRiver = ({ cards, name, handleDiscard, handleTake, className }) => {
   return (
     <div className={styles.cardRiver}>
       <h4>{name} Card River</h4>
@@ -12,7 +11,8 @@ const CardRiver = ({ cards, name, handleDiscard, className }) => {
           <Card
             key={card.id}
             data={card}
-            handleDiscard={() => {handleDiscard(card.id)}}
+            handleDiscard={handleDiscard}
+            handleTake={handleTake}
           />
         )}
       </div>
@@ -21,6 +21,5 @@ const CardRiver = ({ cards, name, handleDiscard, className }) => {
     </div>
   );
 }
-
 
 export default CardRiver;

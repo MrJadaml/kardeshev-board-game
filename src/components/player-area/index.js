@@ -13,6 +13,7 @@ import {
   playerDiscardPileState,
 } from '../../state/atoms.js';
 
+import { moveCardFrom } from '../../utils/deck/';
 import { starterCards } from '../../content/cards/faction/starters';
 import cardBack from '../../assets/card-back-3.png';
 import { draw, shuffle } from '../utils/cards';
@@ -29,6 +30,8 @@ const PlayerArea = ({ }) => {
 
   const [isDiscardsVisible, setIsDiscardsVisible] = useState(false);
 
+  const [cardsInPlay, setCardsInPlay] = useState([]);
+
   const handleToggleDiscardViewer = () => {
     setIsDiscardsVisible(!isDiscardsVisible)
   }
@@ -38,19 +41,14 @@ const PlayerArea = ({ }) => {
   }
 
   const handlePlayerDiscard = (cardID) => {
-    let discard;
+    const [nextPlayerHand, nextPlayerDiscardPile] = moveCardFrom(
+      playerHand,
+      playerDiscardPile,
+      cardID,
+    );
 
-    const filteredHand = playerHand.filter(card => {
-      if (card.id === cardID) {
-        discard = card;
-        return false;
-      }
-
-      return true;
-    });
-
-    setPlayerHand(filteredHand);
-    setPlayerDiscardPile([discard, ...playerDiscardPile]);
+    setPlayerHand(nextPlayerHand);
+    setPlayerDiscardPile(nextPlayerDiscardPile);
   }
 
   const handleEndTurn = () => {
@@ -68,12 +66,29 @@ const PlayerArea = ({ }) => {
     setPlayerExplorationDraw([]);
   }
 
+  const handleTake = (cardID) => {
+    const [nextPlayerExplorationDraw, nextCardsInPlay] = moveCardFrom(
+      playerExplorationDraw,
+      cardsInPlay,
+      cardID
+    );
+
+    setPlayerExplorationDraw(nextPlayerExplorationDraw);
+    setCardsInPlay(nextCardsInPlay);
+  }
+
   return (
     <div className="player-area">
       <h1>Player Area</h1>
       <button onClick={handleEndTurn}>End Turn</button>
 
       <div>Active Cards - Exos, EAs, PCs, etc..</div>
+
+      <CardRiver
+        name="In Play"
+        cards={cardsInPlay}
+      />
+
       <br />
 
       ------------------------
@@ -81,6 +96,7 @@ const PlayerArea = ({ }) => {
       <CardRiver
         name="Exploration"
         cards={playerExplorationDraw}
+        handleTake={handleTake}
       />
 
       ------------------------
