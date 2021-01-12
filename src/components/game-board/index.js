@@ -12,7 +12,7 @@ import {
   explorationDiscardPileState,
 } from '../../state/atoms.js';
 
-import { draw } from '../utils/cards';
+import { draw } from '../../utils/deck';
 import cardBack from '../../assets/card-back-1.png';
 import meeple from '../../assets/meeple.png';
 import styles from './GameBoard.module.css';

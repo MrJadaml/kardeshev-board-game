@@ -5,7 +5,7 @@ import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import MarketSlot from '../market-slot/';
 
-import { draw, shuffle } from '../utils/cards';
+import { draw, shuffle } from '../../utils/deck/';
 import { marketCards } from '../../content/cards/action/market';
 import { techDrawState } from '../../state/atoms.js';
 import cardBack from '../../assets/card-back-3.png';
@@ -23,7 +23,7 @@ const Market = () => {
     const openSlot = techDraw.indexOf(null);
 
     if (openSlot === -1) {
-      console.log('no card drawn')
+      console.info('%cno card drawn', 'color: pink')
       return;
     }
 

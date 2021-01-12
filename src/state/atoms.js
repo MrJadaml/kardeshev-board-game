@@ -6,7 +6,7 @@ import {
   useRecoilValue,
 } from 'recoil';
 
-import { shuffle } from '../components/utils/cards';
+import { shuffle } from '../utils/deck';
 import { starterCards } from '../content/cards/exploration/';
 
 export const explorationDeckState = atom({

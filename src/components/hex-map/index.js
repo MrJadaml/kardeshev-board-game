@@ -8,7 +8,7 @@ import {
   Pattern,
 } from 'react-hexgrid';
 
-import { getPlanetHexes } from '../utils/hex/';
+import { getPlanetHexes } from '../../utils/hex/';
 import hexDesert from '../../assets/hex-desert.png';
 import hexForest from '../../assets/hex-forest.png';
 import hexHill from '../../assets/hex-hill.png';

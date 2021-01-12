@@ -13,10 +13,9 @@ import {
   playerDiscardPileState,
 } from '../../state/atoms.js';
 
-import { moveCardFrom } from '../../utils/deck/';
+import { moveCardFrom, draw, shuffle } from '../../utils/deck/';
 import { starterCards } from '../../content/cards/faction/starters';
 import cardBack from '../../assets/card-back-3.png';
-import { draw, shuffle } from '../utils/cards';
 import styles from './PlayerArea.module.css';
 
 const PlayerArea = ({ }) => {
