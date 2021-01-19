@@ -1,7 +1,7 @@
 const discoveries = ['@', '#', '%', '&', '©', '§', '¶'];
 
-const planet = {
-  id: 8000,
+export const planet = {
+  cardId: 8000,
   name: 'Terra',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   discoveries: discoveries,
@@ -16,9 +16,12 @@ const planet = {
   developments: [ 'ore storage' ],
   unlockables: null,
   event: null,
-  resources: { ore: 20 },
+  // resources: { ore: 20 }, // throws object keys error
   vp: 1,
   flavorText: 'it\'s round',
   cardType: 'Exo',
 }
 
+export const terra = [
+  planet,
+];

@@ -108,6 +108,7 @@ const baseExplorationCards = [
 // STARTING DECK
 export const starterCards = idGenerator([
   ...exoCards,
+  ...exoPlanets,
   ...eventCards,
   ...encounterCards,
   ...baseExplorationCards,

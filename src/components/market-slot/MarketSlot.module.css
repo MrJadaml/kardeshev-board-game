@@ -9,8 +9,9 @@
 
 .worker {
   position: absolute;
+  opacity: 0.1;
 }
 
 .dragHover {
-  opacity: 0.2;
+  opacity: 0.4;
 }

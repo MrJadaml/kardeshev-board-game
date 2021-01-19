@@ -14,23 +14,22 @@ const MarketSlot = ({ card, marketIdx }) => {
   const [isMeeple, setMeeple] = useState(false)
   const [isDragEnter, setIsDragEnter] = useState(false)
 
-  const handleDragEnd = () => {
+  const handleDragEnd = (e) => {
     setMeeple(false);
   }
 
   const handleDrop = (e) => {
     console.log('drop')
-    e.preventDefault();
     setMeeple(true)
   }
 
   const handleDragEnter = (e) => {
     console.log('drag over')
     setIsDragEnter(true);
-    e.preventDefault();
   }
 
   const handleDragLeave = (e) => {
+    console.log('leave')
     setIsDragEnter(false);
   }
 
@@ -57,15 +56,13 @@ const MarketSlot = ({ card, marketIdx }) => {
         onDragLeave={handleDragLeave}
         onDragEnd={handleDragEnd}
       >
-        {(isMeeple || isDragEnter) && (
-          <img
-            src={meeple}
-            alt="meeple"
-            draggable="true"
-            id="p1"
-            className={`${styles.worker} ${isDragEnter ? styles.dragHover : ''}`}
-          />
-        )}
+        <img
+          src={meeple}
+          alt="meeple"
+          draggable="true"
+          id="p1"
+          className={`${styles.worker} ${isDragEnter ? styles.dragHover : ''}`}
+        />
 
         {card && (
           <div>

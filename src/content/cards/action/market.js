@@ -40,9 +40,21 @@ const credit = {
   cardType: 'credit',
 }
 
+const salvage = {
+  cardType: '',
+  cost: 0,
+  description: 'Remove 1 Space Debris card from play. Gain +1 Ore.',
+  benefit: '+1 Ore',
+  flavorText: 'One man\'s trash is another mans treasure.',
+  imageUrl: '',
+  kType: 0,
+  name: 'salvage',
+}
+
 export const marketCards = idGenerator([
   worker,
-  ...cardCloner(science, 4),
+  ...cardCloner(science, 2),
   ...cardCloner(ore, 3),
-  ...cardCloner(credit, 3),
+  ...cardCloner(credit, 2),
+  ...cardCloner(salvage, 3)
 ]);

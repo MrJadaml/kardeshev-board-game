@@ -10,5 +10,5 @@ const spaceDebris = {
 }
 
 export const starterSpaceJunk = [
-  ...cardCloner(spaceDebris, 30),
+  ...cardCloner(spaceDebris, 10),
 ]

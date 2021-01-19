@@ -10,5 +10,5 @@ const emptySpace = {
 }
 
 export const emptySpaceCards = [
-  ...cardCloner(emptySpace, 10),
+  ...cardCloner(emptySpace, 30),
 ];
