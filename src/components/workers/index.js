@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
+import { Worker } from '../worker/';
+import { WorkerLocation } from '../worker-location/';
 import meeple from '../../assets/meeple.png';
 
 import {
@@ -24,30 +26,16 @@ const Workers = () => {
   ];
 
   const [hexes, setHexes] = useState(initHexes);
-  const [isMeeple, setMeeple] = useState(true)
 
-  const handleDragEnd = () => {
-    setMeeple(false);
-  }
+  const workers = [
+    { id: 42 },
+    { id: 33 },
+  ];
 
-  const handleDrop = (e) => {
-    console.log('drop')
-    e.preventDefault();
-    setMeeple(true)
-  }
-
-  const handleDragOver = (e) => {
-    console.log('drag over')
-    e.preventDefault();
-    // Get the id of the target and add the moved element to the target's DOM
-  }
   return (
-    <div
-      onDrop={handleDrop}
-      onDragOver={handleDragOver}
-      onDragEnd={handleDragEnd}
-    >
-      {isMeeple && <img src={meeple} alt="meeple" draggable="true" id="p1" />}
+    <div>
+      {/* TODO: Integrate with Hex SVGs */}
+      <WorkerLocation initialWorkers={workers} />
 
     <HexGrid
       width={292}

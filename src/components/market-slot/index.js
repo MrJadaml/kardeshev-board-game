@@ -1,8 +1,9 @@
 import styles from './MarketSlot.module.css';
 import { useRecoilState } from 'recoil';
 import { useState } from 'react';
+import { WorkerLocation } from '../worker-location/';
+import { ItemTypes } from '../ItemTypes';
 
-import meeple from '../../assets/meeple.png';
 import {
   playerDiscardPileState,
   techDrawState,
@@ -11,27 +12,6 @@ import {
 const MarketSlot = ({ card, marketIdx }) => {
   const [techDraw, setTechDraw] = useRecoilState(techDrawState);
   const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
-  const [isMeeple, setMeeple] = useState(false)
-  const [isDragEnter, setIsDragEnter] = useState(false)
-
-  const handleDragEnd = (e) => {
-    setMeeple(false);
-  }
-
-  const handleDrop = (e) => {
-    console.log('drop')
-    setMeeple(true)
-  }
-
-  const handleDragEnter = (e) => {
-    console.log('drag over')
-    setIsDragEnter(true);
-  }
-
-  const handleDragLeave = (e) => {
-    console.log('leave')
-    setIsDragEnter(false);
-  }
 
   const handleTake = () => {
     const nextTechDraw = techDraw.reduce((acc, card, idx) => {
@@ -50,19 +30,8 @@ const MarketSlot = ({ card, marketIdx }) => {
 
   return (
     <div className={styles.marketSlot}>
-      <div className={styles.cardSlot}
-        onDrop={handleDrop}
-        onDragEnter={handleDragEnter}
-        onDragLeave={handleDragLeave}
-        onDragEnd={handleDragEnd}
-      >
-        <img
-          src={meeple}
-          alt="meeple"
-          draggable="true"
-          id="p1"
-          className={`${styles.worker} ${isDragEnter ? styles.dragHover : ''}`}
-        />
+      <div className={styles.cardSlot}>
+        <WorkerLocation />
 
         {card && (
           <div>
