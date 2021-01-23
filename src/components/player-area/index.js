@@ -23,7 +23,7 @@ const PlayerArea = ({ }) => {
   const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
   const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
 
-  const [playerDeck, setPlayerDeck] = useState(starterCards);
+  const [playerDeck, setPlayerDeck] = useState(shuffle(starterCards));
   const [playerHand, setPlayerHand] = useState([]);
   const [playerDiscardPile, setPlayerDiscardPile] = useRecoilState(playerDiscardPileState);
 

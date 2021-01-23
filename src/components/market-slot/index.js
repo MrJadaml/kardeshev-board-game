@@ -31,17 +31,17 @@ const MarketSlot = ({ card, marketIdx }) => {
   return (
     <div className={styles.marketSlot}>
       <div className={styles.cardSlot}>
-        <WorkerLocation />
-
-        {card && (
-          <div>
-            <div>Cost: {card.cost}</div>
-            <h4>{card.name}</h4>
-            <div>{card.description}</div>
-            ---
-            <div>{card.flavorText}</div>
-          </div>
-        )}
+        <WorkerLocation>
+          {card && (
+            <div>
+              <div>Cost: {card.cost}</div>
+              <h4>{card.name}</h4>
+              <div>{card.description}</div>
+              ---
+              <div>{card.flavorText}</div>
+            </div>
+          )}
+        </WorkerLocation>
       </div>
 
       {card && <button onClick={handleTake}>Take</button>}

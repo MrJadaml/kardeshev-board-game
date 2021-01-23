@@ -3,13 +3,9 @@ import { useState } from 'react';
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "../ItemTypes";
 import { Worker } from '../worker/';
+import styles from './WorkerLocation.module.css';
 
-const style = {
-  height: '100%',
-  width: '100%',
-};
-
-export const WorkerLocation = ({ initialWorkers = [] }) => {
+export const WorkerLocation = ({ children, initialWorkers = [] }) => {
   const [workers, setWorkers] = useState(initialWorkers);
 
   const [, drop] = useDrop({
@@ -32,13 +28,19 @@ export const WorkerLocation = ({ initialWorkers = [] }) => {
   }
 
   return (
-    <div ref={drop} style={{ ...style }}>
+    <div
+      className="worker-location"
+      ref={drop}
+      className={styles.workerLocation}
+    >
       {workers.map(worker => (
         <Worker
           id={worker.id}
           removeWorker={removeWorker}
         />
       ))}
+
+      {children}
     </div>
   );
 };

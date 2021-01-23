@@ -1,12 +1,9 @@
 import React from "react";
 import { useDrag } from "react-dnd";
 import { ItemTypes } from "../ItemTypes";
+import styles from './Worker.module.css';
 
 import meeple from '../../assets/meeple.png';
-
-const style = {
-  cursor: 'move',
-};
 
 export const Worker = ({ id, removeWorker }) => {
   const [{ isDragging }, drag] = useDrag({
@@ -29,7 +26,8 @@ export const Worker = ({ id, removeWorker }) => {
       src={meeple}
       alt="meeple"
       ref={drag}
-      style={{ ...style, opacity }}
+      className={styles.worker}
+      style={{ opacity }}
     />
   );
 };

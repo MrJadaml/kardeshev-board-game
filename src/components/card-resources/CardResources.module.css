@@ -1,0 +1,12 @@
+.resources {
+  padding: 6px 0;
+}
+
+.resource {
+  border-top: 1px solid black;
+  padding: 3px;
+}
+
+.oneTimeResource {
+  background: tomato;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import { WorkerLocation } from '../worker-location/';
 
 import {
   HexGrid,
@@ -9,8 +10,7 @@ import {
 } from 'react-hexgrid';
 
 import { getPlanetHexes } from '../../utils/hex/';
-import hexDesert from '../../assets/hex-desert.png';
-import hexForest from '../../assets/hex-forest.png';
+import hexDesert from '../../assets/hex-desert.png'; import hexForest from '../../assets/hex-forest.png';
 import hexHill from '../../assets/hex-hill.png';
 import hexPlainsForest from '../../assets/hex-plains-forest.png';
 import hexPlains from '../../assets/hex-plains.png';
@@ -58,7 +58,9 @@ const HexMap = () => {
             {...hex}
             key={hex.id}
             onClick={handleClick}
-          />
+          >
+            <WorkerLocation  />
+          </Hexagon>
         ))}
       </Layout>
 

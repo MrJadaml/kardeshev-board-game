@@ -1,4 +1,5 @@
 import styles from './Card.module.css';
+import CardResources from '../../card-resources/';
 
 const Card = ({ data, handleDiscard, handlePlay, handleTake }) => {
   return (
@@ -6,10 +7,20 @@ const Card = ({ data, handleDiscard, handlePlay, handleTake }) => {
       <div className={styles.card}>
         <h4>{data.name}</h4>
         <div>{data.description}</div>
-        ---
-        <div>{data.flavorText}</div>
-        ---
-        <div>{data.resources}</div>
+
+        {data.cardType !== 'resource' && (
+          <>
+            ---
+            <div>{data.flavorText}</div>
+          </>
+        )}
+
+        {data.resources && (
+          <CardResources
+            resources={data.resources}
+            oneTimeResource={data.oneTimeResource}
+          />
+        )}
       </div>
       <div>
         {handlePlay && <button onClick={() => {handlePlay(data.id)}}>Play</button>}
