@@ -63,7 +63,7 @@ const Market = () => {
           {techDraw.slice(4,8).reverse().map((card, idx) => (
             <MarketSlot
               card={card}
-              marketIdx={idx+4}
+              marketIdx={7-idx}
               key={`${card}-${idx}`}
             />
           ))}
