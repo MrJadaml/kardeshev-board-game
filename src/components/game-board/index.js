@@ -37,39 +37,40 @@ const GameBoard = ({ handleDraw }) => {
 
       <Tracker name="Session" />
 
-      <div className={styles.mid}>
+      <div className={styles.middle}>
         <div className={styles.research}>
           Research Pact
           <WorkerLocation />
         </div>
 
         <Market />
-      </div>
 
-      <div className={styles.bottom}>
-        <div className={styles.reference}>
-          Icon Reference
+        <div className={styles.end}>
+          <div className={styles.reference}>
+            Icon Reference
+          </div>
+          <div className={styles.oreMarket}>
+            Ore Market??
+          </div>
+
+          <div className={styles.explorationDeck}>
+            <h2>Exploration Cards</h2>
+            <div className={styles.cardStacks}>
+              <Deck
+                name="Exploration"
+                handleDraw={handleExplorationDraw}
+                cards={explorationDeck}
+                cardBack={cardBack}
+              />
+
+              <DiscardPile
+                name="Exploration"
+                cards={explorationDiscardPile}
+                cardBack={cardBack}
+              />
+            </div>
+          </div>
         </div>
-        <div className={styles.oreMarket}>
-          Ore Market??
-        </div>
-      </div>
-
-
-      <h2>Exploration Cards</h2>
-      <div className={styles.cardStacks}>
-        <Deck
-          name="Exploration"
-          handleDraw={handleExplorationDraw}
-          cards={explorationDeck}
-          cardBack={cardBack}
-        />
-
-        <DiscardPile
-          name="Exploration"
-          cards={explorationDiscardPile}
-          cardBack={cardBack}
-        />
       </div>
     </div>
   );

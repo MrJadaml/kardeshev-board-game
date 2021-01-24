@@ -1,6 +1,8 @@
 .board {
   border: 2px solid black;
   margin: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardStacks {
@@ -16,7 +18,20 @@
   margin: 8px;
 }
 
-.mid {
-  display: flex;
+.explorationDeck {
+  flex-direction: column;
+  margin-left: 90px;
+  margin-top: 90px;
 }
 
+.middle {
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
+.end {
+  width: 20%;
+  flex-direction: column;
+  margin-top: 30px;
+}
