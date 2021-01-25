@@ -2,83 +2,116 @@ import { cardCloner, idGenerator } from '../index';
 
 const worker = {
   cardId: 1001,
-  name: 'Worker',
+  name: 'Survey',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: 'Take a Work Action',
-  flavorText: 'blah blah blah',
+  description: 'Move a worker to an unsurveyed hex and reveal that hex.',
+  flavorText: '',
   cardType: 'worker',
+  resources: [
+    { credits: 1 },
+  ],
 }
 
 const science = {
   cardId: 1002,
   name: 'Science',
-  imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+1 Science',
-  flavorText: 'blah blah blah',
-  cardType: 'science',
+  description: '( 1 )',
+  cardType: 'resource',
+  resources: [
+    { science: 1 },
+  ],
 }
 
 const ore = {
   cardId: 1003,
   name: 'Ore',
-  imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+1 Ore',
-  flavorText: 'blah blah blah',
-  cardType: 'ore',
+  description: '( 1 )',
+  cardType: 'resource',
+  resources: [
+    { ore: 1 },
+  ],
 }
 
 const credit = {
   cardId: 1004,
   name: 'Credit',
-  imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+1 Credit',
-  flavorText: 'blah blah blah',
-  cardType: 'credit',
+  description: '( 1 )',
+  cardType: 'resource',
+  resources: [
+    { credits: 1 },
+  ],
 }
 
 const faction1 = {
   cardId: 1005,
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+1 Draw & +1 Science',
+  description: '+1 Draw',
   flavorText: 'blah blah blah',
   cardType: 'faction',
+  resources: [
+    { credit: 1 },
+  ],
 }
 
 const faction2 = {
   cardId: 1005,
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+2 Science',
+  description: '+1 Scan',
   flavorText: 'blah blah blah',
   cardType: 'faction',
+  resources: [
+    { science: 2 },
+  ],
 }
 
 const faction3 = {
   cardId: 1005,
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+1 Action & +1 Science',
+  description: '+1 Action',
   flavorText: 'blah blah blah',
   cardType: 'faction',
+  resources: [
+    { science: 1 },
+  ],
 }
 
-const burner = {
+const burnerScience = {
   cardId: 1005,
   name: 'Burner',
-  imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
-  description: '+1 Draw & +2 Science. Once the science resources from this card are used, trash this card',
+  imageUrl: '',
+  description: '+2 Draw. Once the science resources from this card are used, trash this card',
   flavorText: 'one and done',
   cardType: 'faction',
+  resources: [
+    { science: 3 },
+  ],
+  oneTimeResource: true,
+}
+
+const burnerOre = {
+  cardId: 1005,
+  name: 'Burner',
+  imageUrl: '',
+  description: '+1 Draw. +1 Scan. Once the ore resources from this card are used, trash this card',
+  flavorText: 'one and done',
+  cardType: 'faction',
+  resources: [
+    { ore: 2 },
+  ],
+  oneTimeResource: true,
 }
 
 export const starterCards = idGenerator([
   worker,
-  // ...cardCloner(science, 4),
-  // ...cardCloner(ore, 3),
-  // ...cardCloner(credit, 3),
+  ...cardCloner(science, 4),
+  ...cardCloner(ore, 5),
+  ...cardCloner(credit, 0),
   faction1,
   faction2,
   faction3,
-  burner,
+  burnerOre,
+  burnerScience,
 ]);

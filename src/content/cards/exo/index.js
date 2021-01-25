@@ -3,5 +3,5 @@ import { terra } from './planets/terra';
 
 export const exoPlanets = [
   ...homePlanets,
-  ... terra,
+  ...terra,
 ];
