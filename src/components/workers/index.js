@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Worker } from '../worker/';
 import { WorkerLocation } from '../worker-location/';
-import meeple from '../../assets/meeple.png';
 
 import {
   HexGrid,
@@ -25,7 +23,7 @@ const Workers = () => {
     { id: 8, text: '-§', q: 3, r: -2,  s: 0 },
   ];
 
-  const [hexes, setHexes] = useState(initHexes);
+  const [hexes] = useState(initHexes);
 
   const workers = [
     { id: 42 },

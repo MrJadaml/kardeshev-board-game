@@ -7,7 +7,6 @@ import CardRiver from '../card-river/';
 import FactionBoard from '../faction-board/';
 
 import {
-  explorationDeckState,
   playerExplorationDrawState,
   explorationDiscardPileState,
   playerDiscardPileState,
@@ -18,8 +17,7 @@ import { starterCards } from '../../content/cards/faction/starters';
 import cardBack from '../../assets/card-back-3.png';
 import styles from './PlayerArea.module.css';
 
-const PlayerArea = ({ }) => {
-  const [explorationDeck, setExplorationDeck] = useRecoilState(explorationDeckState);
+const PlayerArea = () => {
   const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
   const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
 

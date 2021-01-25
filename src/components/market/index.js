@@ -15,9 +15,8 @@ import styles from './Market.module.css';
 import { cloneDeep } from 'lodash';
 
 const Market = () => {
-  const [techDeck, setTechDeck] = useState(shuffle(marketCards));
+  const [techDeck] = useState(shuffle(marketCards));
   const [techDraw, setTechDraw] = useRecoilState(techDrawState);
-  const [techDiscardPile, setTechDiscardPile] = useState([]);
 
   const handleTechDraw = () => {
     const openSlot = techDraw.indexOf(null);

@@ -1,9 +1,5 @@
 import {
-  RecoilRoot,
   atom,
-  selector,
-  useRecoilState,
-  useRecoilValue,
 } from 'recoil';
 
 import { shuffle } from '../utils/deck';

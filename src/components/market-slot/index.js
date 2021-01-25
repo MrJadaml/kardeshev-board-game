@@ -1,8 +1,6 @@
 import styles from './MarketSlot.module.css';
 import { useRecoilState } from 'recoil';
-import { useState } from 'react';
 import { WorkerLocation } from '../worker-location/';
-import { ItemTypes } from '../ItemTypes';
 
 import {
   playerDiscardPileState,

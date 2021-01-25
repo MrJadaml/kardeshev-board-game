@@ -1,11 +1,10 @@
 import { useRecoilState } from 'recoil';
-import { useState } from 'react';
 
 import Tracker from '../tracker/';
 import Market from '../market/';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
-import { WorkerLocation } from '../worker-location/';
+import ResearchAccord from '../research-accord/';
 
 import {
   explorationDeckState,
@@ -18,17 +17,12 @@ import cardBack from '../../assets/card-back-1.png';
 import styles from './GameBoard.module.css';
 
 const GameBoard = ({ handleDraw }) => {
-  const [explorationDeck, setExplorationDeck] = useRecoilState(explorationDeckState);
+  const [explorationDeck] = useRecoilState(explorationDeckState);
   const [playerExplorationDraw, setPlayerExplorationDraw] = useRecoilState(playerExplorationDrawState);
-  const [explorationDiscardPile, setExplorationDiscardPile] = useRecoilState(explorationDiscardPileState);
+  const [explorationDiscardPile] = useRecoilState(explorationDiscardPileState);
 
   const handleExplorationDraw = () => {
     setPlayerExplorationDraw([...playerExplorationDraw, ...draw(explorationDeck)]);
-  }
-
-  const handleExplorationDiscard = () => {
-    setExplorationDiscardPile([...playerExplorationDraw, ...explorationDiscardPile]);
-    setPlayerExplorationDraw([]);
   }
 
   return (
@@ -38,11 +32,7 @@ const GameBoard = ({ handleDraw }) => {
       <Tracker name="Session" />
 
       <div className={styles.middle}>
-        <div className={styles.research}>
-          Research Pact
-          <WorkerLocation />
-        </div>
-
+        <ResearchAccord />
         <Market />
 
         <div className={styles.end}>

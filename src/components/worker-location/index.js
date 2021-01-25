@@ -29,7 +29,6 @@ export const WorkerLocation = ({ children, initialWorkers = [] }) => {
 
   return (
     <div
-      className="worker-location"
       ref={drop}
       className={styles.workerLocation}
     >
