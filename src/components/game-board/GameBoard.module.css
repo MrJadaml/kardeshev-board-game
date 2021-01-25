@@ -35,3 +35,8 @@
   flex-direction: column;
   margin-top: 30px;
 }
+
+.reference {
+  padding: 12px;
+  border: 1px solid black;
+}

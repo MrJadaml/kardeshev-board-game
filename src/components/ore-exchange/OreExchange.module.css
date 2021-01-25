@@ -1,0 +1,25 @@
+.oreExchange {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.step {
+  border-right: 1px dashed black;
+  text-align: center;
+  padding: 8px;
+  align-self: center;
+  width: 100%;
+}
+
+.deck {
+  padding: 8px;
+  width: 120px;
+}
+
+.cardBack {
+  width: 100px;
+  height: 140px;
+  border-radius: 8px;
+}

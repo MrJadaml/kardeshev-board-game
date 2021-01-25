@@ -5,6 +5,7 @@ import Market from '../market/';
 import Deck from '../deck/';
 import DiscardPile from '../discard-pile/';
 import ResearchAccord from '../research-accord/';
+import OreExchange from '../ore-exchange/';
 
 import {
   explorationDeckState,
@@ -34,13 +35,11 @@ const GameBoard = ({ handleDraw }) => {
       <div className={styles.middle}>
         <ResearchAccord />
         <Market />
+        <OreExchange />
 
         <div className={styles.end}>
           <div className={styles.reference}>
-            Icon Reference
-          </div>
-          <div className={styles.oreMarket}>
-            Ore Market??
+            Icon Reference...
           </div>
 
           <div className={styles.explorationDeck}>
