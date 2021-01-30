@@ -130,7 +130,9 @@ const PlayerArea = () => {
       )}
 
 
-      <FactionBoard />
+      <div className={styles.factionBoard}>
+        <FactionBoard />
+      </div>
     </div>
   );
 }

@@ -1,10 +1,33 @@
+import { useDrag } from "react-dnd";
+import { ItemTypes } from "../../ItemTypes";
 import styles from './Card.module.css';
 import CardResources from '../../card-resources/';
 
 const Card = ({ data, handleDiscard, handlePlay, handleTake }) => {
+  const { id } = data;
+
+  const [{ isDragging }, drag] = useDrag({
+    item: { id, type: ItemTypes.CARD, data },
+    end: (item, monitor) => {
+      if (monitor.didDrop()) {
+        // removeCard(item.id);
+      }
+    },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging()
+    })
+  });
+
+  const opacity = isDragging ? 0.4 : 1;
+
   return (
     <div className={styles.wrapper}>
-      <div className={styles.card}>
+      <div
+        className={styles.card}
+        style={{ opacity }}
+        ref={drag}
+        alt="card"
+      >
         <h4>{data.name}</h4>
         <div>{data.description}</div>
 
@@ -17,7 +40,7 @@ const Card = ({ data, handleDiscard, handlePlay, handleTake }) => {
 
         {data.resources && (
           <CardResources
-            resources={data.resources}
+            card={data}
             oneTimeResource={data.oneTimeResource}
           />
         )}

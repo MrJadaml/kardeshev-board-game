@@ -48,6 +48,7 @@ const Workers = () => {
       >
         {hexes.map((hex, idx) => (
           <Hexagon
+            key={`${hex}-${idx}`}
             {...hex}
             className={styles.workerHex}
           >

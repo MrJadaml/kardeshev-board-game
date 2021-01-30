@@ -34,6 +34,7 @@ export const WorkerLocation = ({ children, initialWorkers = [] }) => {
     >
       {workers.map(worker => (
         <Worker
+          key={worker.id}
           id={worker.id}
           removeWorker={removeWorker}
         />

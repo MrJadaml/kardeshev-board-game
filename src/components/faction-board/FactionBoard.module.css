@@ -1,6 +1,18 @@
+.factionBoard {
+  display: flex;
+  flex-direction: row;
+}
+
+.resourceCache {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100px;
+}
+
 .board {
   border: 2px solid black;
-  width: 55%;
+  width: 728px;
 }
 
 .header {

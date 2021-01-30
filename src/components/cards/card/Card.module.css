@@ -1,11 +1,11 @@
 .wrapper {
-  width: 15%;
   padding-bottom: 8px;
 }
 
 .card {
   border: 1px solid black;
-  padding: 8px;
-  background: white;
+  border-radius: 8px;
   margin: 2px;
+  height: 140px;
+  width: 100px;
 }

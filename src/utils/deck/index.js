@@ -1,3 +1,5 @@
+import { times } from 'lodash';
+
 export const shuffle = (deck) => {
   const nextDeck = [...deck];
 
@@ -29,3 +31,19 @@ export const moveCardFrom = (start, end, cardID) => {
 
   return [nextStart, nextEnd];
 }
+
+export const getCardResourceList = (card) => {
+  try {
+    const cardResourceList = card.resources.reduce((acc, resource, idx) => {
+      const resourceCount = resource[Object.keys(resource)[0]];
+      const resourceList = times(resourceCount, () => Object.keys(resource)[0]);
+      return [...acc, ...resourceList];
+    }, [])
+
+    console.log('----', cardResourceList)
+    return cardResourceList;
+  } catch (e) {
+    console.log('#getCardResourceList', e);
+  }
+}
+

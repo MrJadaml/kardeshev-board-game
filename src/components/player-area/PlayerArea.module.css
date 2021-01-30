@@ -8,3 +8,9 @@
   width: 100%;
   background: #FFF1EC;
 }
+
+.factionBoard {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
