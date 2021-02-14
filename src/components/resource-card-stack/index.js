@@ -3,6 +3,15 @@ import { useDrop } from "react-dnd";
 import { ItemTypes } from "../ItemTypes";
 import styles from './ResourceCardStack.module.css';
 import { getCardResourceList } from '../../utils/deck/';
+import science from '../../assets/science.png';
+import ore from '../../assets/ore.png';
+import credits from '../../assets/credits.png';
+
+const icons = {
+  science,
+  ore,
+  credits,
+}
 
 const ResourceCardStack = ({ type }) => {
   const [cards, setCards] = useState([]);
@@ -34,7 +43,14 @@ const ResourceCardStack = ({ type }) => {
     >
       {cards.map(card => (
         <div className={styles.cardStack}>
-          {getCardResourceList(card.data)}
+          {getCardResourceList(card.data).map(resource => (
+            <img
+              className={styles.icon}
+              src={icons[resource]}
+              alt="science"
+            />
+          ))}
+
         </div>
       ))}
     </div>

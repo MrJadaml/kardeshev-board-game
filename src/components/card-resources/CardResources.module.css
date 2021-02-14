@@ -1,4 +1,7 @@
 .resources {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   padding: 6px 0;
 }
 
@@ -9,4 +12,8 @@
 
 .oneTimeResource {
   background: tomato;
+}
+
+.icon {
+  width: 25px;
 }

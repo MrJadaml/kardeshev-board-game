@@ -1,42 +1,13 @@
 import { cardCloner, idGenerator } from '../index';
+import { ore, credit, science } from '../resource/';
 
 const worker = {
   cardId: 1001,
   name: 'Survey',
-  imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
+  imageUrl: '',
   description: 'Move a worker to an unsurveyed hex and reveal that hex.',
   flavorText: '',
   cardType: 'worker',
-  resources: [
-    { credits: 1 },
-  ],
-}
-
-const science = {
-  cardId: 1002,
-  name: 'Science',
-  description: '( 1 )',
-  cardType: 'resource',
-  resources: [
-    { science: 1 },
-  ],
-}
-
-const ore = {
-  cardId: 1003,
-  name: 'Ore',
-  description: '( 1 )',
-  cardType: 'resource',
-  resources: [
-    { ore: 1 },
-  ],
-}
-
-const credit = {
-  cardId: 1004,
-  name: 'Credit',
-  description: '( 1 )',
-  cardType: 'resource',
   resources: [
     { credits: 1 },
   ],
@@ -47,10 +18,10 @@ const faction1 = {
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: '+1 Draw',
-  flavorText: 'blah blah blah',
+  flavorText: 'blah blah',
   cardType: 'faction',
   resources: [
-    { credit: 1 },
+    { credits: 1 },
   ],
 }
 
@@ -82,7 +53,7 @@ const burnerScience = {
   cardId: 1005,
   name: 'Burner',
   imageUrl: '',
-  description: '+2 Draw. Once the science resources from this card are used, trash this card',
+  description: '+2 Draw. Once resources are used, trash this card',
   flavorText: 'one and done',
   cardType: 'faction',
   resources: [
@@ -95,7 +66,7 @@ const burnerOre = {
   cardId: 1005,
   name: 'Burner',
   imageUrl: '',
-  description: '+1 Draw. +1 Scan. Once the ore resources from this card are used, trash this card',
+  description: '+1 Draw. +1 Scan. Once resources are used, trash this card',
   flavorText: 'one and done',
   cardType: 'faction',
   resources: [

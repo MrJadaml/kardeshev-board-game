@@ -9,7 +9,6 @@ const baseCard = {
   resources: '',
 }
 
-
 const card = {
   cardId: 0,
   cardType: '',
@@ -23,5 +22,6 @@ const card = {
   kType: 0,
   name: '',
   resources: [{resource: '', amount: 0}],
+  isOneTimeUse: false,
 }
 

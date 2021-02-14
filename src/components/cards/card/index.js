@@ -28,7 +28,7 @@ const Card = ({ data, handleDiscard, handlePlay, handleTake }) => {
         ref={drag}
         alt="card"
       >
-        <h4>{data.name}</h4>
+        <div className={styles.name}>{data.name}</div>
         <div>{data.description}</div>
 
         {data.cardType !== 'resource' && (
