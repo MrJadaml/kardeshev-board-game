@@ -5,9 +5,9 @@
 
 .resourceCache {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   flex-direction: column;
-  height: 100px;
+  height: 100%;
 }
 
 .board {

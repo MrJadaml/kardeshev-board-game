@@ -24,17 +24,17 @@ const ResourceCardStack = ({ type }) => {
     },
   });
 
-  const removeCard = (cardID) => {
-    const nextCard = cards.filter(card => {
-      if (card.id === cardID) {
-        return false;
-      }
+  // const removeCard = (cardID) => {
+    // const nextCard = cards.filter(card => {
+      // if (card.id === cardID) {
+        // return false;
+      // }
 
-      return true;
-    });
+      // return true;
+    // });
 
-    setCards(nextCard);
-  }
+    // setCards(nextCard);
+  // }
 
   return (
     <div
@@ -53,6 +53,14 @@ const ResourceCardStack = ({ type }) => {
 
         </div>
       ))}
+
+      {cards.length === 0 && (
+        <img
+          className={styles.resourceType}
+          src={icons[type]}
+          alt={type}
+        />
+      )}
     </div>
   );
 }

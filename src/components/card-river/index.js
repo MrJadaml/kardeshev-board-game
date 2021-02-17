@@ -9,7 +9,7 @@ const CardRiver = ({ cards, name, handleDiscard, handleTake, className }) => {
       <div className={styles.cards}>
         {cards.map(card =>
           <Card
-            key={card.id}
+            key={JSON.stringify(card.id)}
             data={card}
             handleDiscard={handleDiscard}
             handleTake={handleTake}

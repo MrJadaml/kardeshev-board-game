@@ -14,7 +14,7 @@ const worker = {
 }
 
 const faction1 = {
-  cardId: 1005,
+  cardId: 10092,
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: '+1 Draw',
@@ -26,7 +26,7 @@ const faction1 = {
 }
 
 const faction2 = {
-  cardId: 1005,
+  cardId: 1003,
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: '+1 Scan',
@@ -38,7 +38,7 @@ const faction2 = {
 }
 
 const faction3 = {
-  cardId: 1005,
+  cardId: 1004,
   name: 'Faction Ability',
   imageUrl: 'https://cdn.pixabay.com/photo/2015/07/15/13/32/planet-846181_960_720.jpg',
   description: '+1 Action',
@@ -63,7 +63,7 @@ const burnerScience = {
 }
 
 const burnerOre = {
-  cardId: 1005,
+  cardId: 1006,
   name: 'Burner',
   imageUrl: '',
   description: '+1 Draw. +1 Scan. Once resources are used, trash this card',

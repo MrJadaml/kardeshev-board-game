@@ -9,16 +9,10 @@ const FactionBoard = () => {
 
   return (
     <div className={styles.factionBoard}>
-      <div className={styles.resouceCache}>
-        <div className={styles.oreCache}>
-          <ResourceCardStack type="ore" />
-        </div>
-        <div className={styles.scienceCache}>
-          <ResourceCardStack type="sci" />
-        </div>
-        <div className={styles.creditsCache}>
-          <ResourceCardStack type="cred" />
-        </div>
+      <div className={styles.resourceCache}>
+        <ResourceCardStack type="ore" />
+        <ResourceCardStack type="science" />
+        <ResourceCardStack type="credits" />
       </div>
 
       <div className={styles.board}>

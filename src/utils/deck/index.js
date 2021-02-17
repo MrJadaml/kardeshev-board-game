@@ -40,7 +40,6 @@ export const getCardResourceList = (card) => {
       return [...acc, ...resourceList];
     }, [])
 
-    console.log('----', cardResourceList)
     return cardResourceList;
   } catch (e) {
     console.log('#getCardResourceList', e);
